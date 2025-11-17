@@ -1,4 +1,4 @@
-# Use Node.js 20 for Railway deployment
+# Use Node.js 20 for Caprover deployment
 FROM node:20-alpine
 
 # Install pnpm
@@ -19,7 +19,10 @@ COPY . .
 # Build the application
 RUN pnpm build
 
-# Expose port 3000 (Railway default)
+# Set default port (Caprover will override this)
+ENV PORT=3000
+
+# Expose port 3000
 EXPOSE 3000
 
 # Start the application

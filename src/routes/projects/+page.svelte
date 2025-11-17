@@ -169,23 +169,27 @@
 	.filter-btn {
 		padding: var(--space-sm) var(--space-xl);
 		background: var(--color-surface);
-		border: 2px solid var(--color-border);
-		border-radius: var(--radius-full);
+		border: var(--border-medium) solid var(--color-border);
+		border-radius: var(--radius-sm);
 		color: var(--color-text);
-		font-weight: 600;
+		font-weight: 700;
 		cursor: pointer;
 		transition: all var(--transition-base);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 
 	.filter-btn:hover {
-		border-color: var(--color-primary);
-		transform: translateY(-2px);
+		background: var(--color-accent);
+		color: var(--color-black);
+		transform: translate(-2px, -2px);
+		box-shadow: var(--shadow-md);
 	}
 
 	.filter-btn.active {
-		background: var(--gradient-primary);
-		color: white;
-		border-color: transparent;
+		background: var(--color-primary);
+		color: var(--color-white);
+		border-color: var(--color-border);
 		box-shadow: var(--shadow-md);
 	}
 
@@ -205,7 +209,7 @@
 	}
 
 	.project-card.featured {
-		background: var(--gradient-subtle);
+		background: var(--color-bg-secondary);
 	}
 
 	.project-card.featured::before {
@@ -214,8 +218,8 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		height: 4px;
-		background: var(--gradient-primary);
+		height: 6px;
+		background: var(--color-secondary);
 	}
 
 	.featured-badge {
@@ -223,13 +227,15 @@
 		top: var(--space-lg);
 		right: var(--space-lg);
 		padding: var(--space-xs) var(--space-md);
-		background: var(--gradient-primary);
-		color: white;
+		background: var(--color-secondary);
+		color: var(--color-white);
 		font-size: 0.75rem;
 		font-weight: 700;
-		border-radius: var(--radius-full);
+		border-radius: var(--radius-sm);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
+		border: var(--border-thin) solid var(--color-border);
+		box-shadow: var(--shadow-sm);
 	}
 
 	.project-header {
@@ -241,12 +247,9 @@
 
 	.project-number {
 		font-size: 3rem;
-		font-weight: 700;
-		background: var(--gradient-primary);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		opacity: 0.5;
+		font-weight: 900;
+		color: var(--color-primary);
+		opacity: 0.3;
 	}
 
 	.project-category {
@@ -281,17 +284,19 @@
 		background: var(--color-bg-tertiary);
 		color: var(--color-text-secondary);
 		padding: var(--space-xs) var(--space-md);
-		border-radius: var(--radius-full);
+		border-radius: var(--radius-sm);
 		font-size: 0.8rem;
-		font-weight: 500;
-		border: 1px solid var(--color-border);
+		font-weight: 600;
+		border: var(--border-thin) solid var(--color-border);
 		transition: all var(--transition-fast);
 	}
 
 	.project-card:hover .tech-badge {
-		background: var(--color-primary);
-		color: white;
-		border-color: var(--color-primary);
+		background: var(--color-black);
+		color: var(--color-white);
+		border-color: var(--color-black);
+		transform: translate(-1px, -1px);
+		box-shadow: 2px 2px 0 var(--color-primary);
 	}
 
 	.project-footer {

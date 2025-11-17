@@ -119,15 +119,15 @@
 	.hero::before {
 		content: '';
 		position: absolute;
-		top: -50%;
-		right: -20%;
-		width: 60%;
-		height: 150%;
-		background: var(--gradient-primary);
-		opacity: 0.03;
-		border-radius: 50%;
-		filter: blur(100px);
+		top: 10%;
+		right: 5%;
+		width: 200px;
+		height: 200px;
+		background: var(--color-accent);
+		opacity: 0.3;
+		border-radius: var(--radius-lg);
 		pointer-events: none;
+		transform: rotate(15deg);
 	}
 
 	.container {
@@ -146,21 +146,25 @@
 	.badge {
 		display: inline-block;
 		padding: var(--space-xs) var(--space-md);
-		background: var(--gradient-primary);
-		color: white;
-		border-radius: var(--radius-full);
+		background: var(--color-secondary);
+		color: var(--color-white);
+		border-radius: var(--radius-sm);
 		font-size: 0.875rem;
-		font-weight: 600;
+		font-weight: 700;
 		margin-bottom: var(--space-lg);
 		box-shadow: var(--shadow-md);
+		border: var(--border-medium) solid var(--color-border);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 
 	.greeting {
 		display: block;
 		font-size: clamp(1.25rem, 3vw, 1.5rem);
-		font-weight: 500;
+		font-weight: 700;
 		color: var(--color-text-secondary);
 		margin-bottom: var(--space-sm);
+		text-transform: none;
 	}
 
 	h1 {
@@ -208,9 +212,9 @@
 		position: relative;
 		width: 280px;
 		height: 280px;
-		border-radius: 50%;
+		border-radius: var(--radius-lg);
 		overflow: hidden;
-		border: 4px solid var(--color-surface);
+		border: var(--border-extra-thick) solid var(--color-border);
 		box-shadow: var(--shadow-xl);
 		animation: float 4s ease-in-out infinite;
 	}
@@ -228,32 +232,31 @@
 
 	.image-glow {
 		position: absolute;
-		inset: -20px;
-		background: var(--gradient-primary);
-		opacity: 0.3;
-		filter: blur(30px);
+		inset: -12px;
+		background: var(--color-primary);
 		z-index: -1;
-		border-radius: 50%;
+		border-radius: var(--radius-lg);
 		animation: pulse 3s ease-in-out infinite;
 	}
 
 	@keyframes pulse {
 		0%, 100% {
-			opacity: 0.3;
-			transform: scale(1);
+			opacity: 0.8;
+			transform: translate(8px, 8px);
 		}
 		50% {
-			opacity: 0.5;
-			transform: scale(1.05);
+			opacity: 1;
+			transform: translate(12px, 12px);
 		}
 	}
 
 	.floating-card {
 		position: absolute;
 		background: var(--color-surface);
-		border-radius: var(--radius-xl);
+		border-radius: var(--radius-lg);
 		padding: var(--space-lg);
-		box-shadow: var(--shadow-xl);
+		box-shadow: var(--shadow-lg);
+		border: var(--border-thick) solid var(--color-border);
 		z-index: 2;
 	}
 
@@ -302,12 +305,10 @@
 
 	.stat-number {
 		font-size: 2.5rem;
-		font-weight: 700;
-		background: var(--gradient-primary);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+		font-weight: 900;
+		color: var(--color-primary);
 		margin-bottom: var(--space-xs);
+		text-transform: uppercase;
 	}
 
 	.stat-label {

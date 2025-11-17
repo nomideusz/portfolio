@@ -185,9 +185,9 @@
 	.profile-image-small {
 		width: 100px;
 		height: 100px;
-		border-radius: 50%;
+		border-radius: var(--radius-lg);
 		overflow: hidden;
-		border: 3px solid var(--color-primary);
+		border: var(--border-thick) solid var(--color-primary);
 		box-shadow: var(--shadow-md);
 		flex-shrink: 0;
 	}
@@ -232,8 +232,9 @@
 
 	.stat-value {
 		font-size: 2.5rem;
-		font-weight: 700;
+		font-weight: 900;
 		margin-bottom: var(--space-xs);
+		color: var(--color-primary);
 	}
 
 	.stat-label {
@@ -281,18 +282,30 @@
 	}
 
 	.skill-bar {
-		height: 8px;
+		height: 12px;
 		background: var(--color-bg-tertiary);
-		border-radius: var(--radius-full);
+		border-radius: var(--radius-sm);
 		overflow: hidden;
 		margin-bottom: var(--space-sm);
+		border: var(--border-thin) solid var(--color-border);
 	}
 
 	.skill-progress {
 		height: 100%;
-		background: var(--gradient-primary);
-		border-radius: var(--radius-full);
+		background: var(--color-primary);
+		border-radius: 0;
 		transition: width var(--transition-slow);
+		position: relative;
+	}
+
+	.skill-progress::after {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 4px;
+		background: var(--color-secondary);
 	}
 
 	.skill-level {
@@ -318,8 +331,8 @@
 		left: 20px;
 		top: 30px;
 		bottom: 30px;
-		width: 2px;
-		background: var(--gradient-primary);
+		width: 4px;
+		background: var(--color-primary);
 	}
 
 	.timeline-item {
@@ -331,12 +344,13 @@
 
 	.timeline-marker {
 		position: absolute;
-		left: 12px;
+		left: 10px;
 		top: var(--space-xl);
-		width: 18px;
-		height: 18px;
-		background: var(--gradient-primary);
-		border-radius: 50%;
+		width: 24px;
+		height: 24px;
+		background: var(--color-secondary);
+		border-radius: var(--radius-sm);
+		border: var(--border-medium) solid var(--color-border);
 		box-shadow: 0 0 0 4px var(--color-surface);
 	}
 
@@ -366,8 +380,8 @@
 	.cta-card {
 		text-align: center;
 		padding: var(--space-3xl);
-		background: var(--gradient-subtle);
-		border: 2px solid var(--color-border);
+		background: var(--color-bg-secondary);
+		border: var(--border-thick) solid var(--color-border);
 	}
 
 	.cta-card h2 {

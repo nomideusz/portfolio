@@ -212,14 +212,15 @@
 		width: 80px;
 		height: 80px;
 		margin: 0 auto var(--space-lg);
-		background: var(--gradient-primary);
-		border-radius: 50%;
+		background: var(--color-primary);
+		border-radius: var(--radius-lg);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		font-size: 3rem;
-		color: white;
-		box-shadow: var(--shadow-glow);
+		color: var(--color-white);
+		box-shadow: var(--shadow-brutal);
+		border: var(--border-thick) solid var(--color-border);
 	}
 
 	.success-message h3 {
@@ -260,12 +261,13 @@
 	input,
 	textarea {
 		padding: var(--space-md);
-		border: 2px solid var(--color-border);
-		border-radius: var(--radius-md);
+		border: var(--border-medium) solid var(--color-border);
+		border-radius: var(--radius-sm);
 		background: var(--color-surface);
 		color: var(--color-text);
 		font-family: inherit;
 		font-size: 1rem;
+		font-weight: 500;
 		transition: all var(--transition-base);
 	}
 
@@ -273,7 +275,8 @@
 	textarea:focus {
 		outline: none;
 		border-color: var(--color-primary);
-		box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+		transform: translate(-2px, -2px);
+		box-shadow: var(--shadow-md);
 	}
 
 	input:disabled,
@@ -347,16 +350,17 @@
 		gap: var(--space-md);
 		padding: var(--space-md);
 		background: var(--color-bg-secondary);
-		border-radius: var(--radius-md);
-		border: 1px solid var(--color-border);
+		border-radius: var(--radius-sm);
+		border: var(--border-medium) solid var(--color-border);
 		text-decoration: none;
 		transition: all var(--transition-base);
 	}
 
 	.contact-method:hover {
-		transform: translateX(4px);
-		background: var(--color-bg-tertiary);
-		border-color: var(--color-primary);
+		transform: translate(-2px, -2px);
+		background: var(--color-accent);
+		border-color: var(--color-border);
+		box-shadow: var(--shadow-md);
 	}
 
 	.method-icon {

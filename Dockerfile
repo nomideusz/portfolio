@@ -1,4 +1,4 @@
-# Build stage
+# Build stage - Updated for Node.js 20 compatibility
 FROM node:20-alpine as build
 
 # Set working directory

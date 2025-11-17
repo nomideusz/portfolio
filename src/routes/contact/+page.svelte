@@ -15,6 +15,7 @@
 
 	let submitted = $state(false);
 	let isSubmitting = $state(false);
+	let errorMessage = $state('');
 
 	const contactMethods: ContactMethod[] = [
 		{
@@ -46,20 +47,36 @@
 	async function handleSubmit(e: Event) {
 		e.preventDefault();
 		isSubmitting = true;
+		errorMessage = '';
 
-		// Simulate API call
-		await new Promise(resolve => setTimeout(resolve, 1000));
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(formData)
+			});
 
-		// In a real app, you'd send this to a backend
-		console.log('Form submitted:', formData);
-		submitted = true;
-		isSubmitting = false;
+			const result = await response.json();
 
-		// Reset form after 5 seconds
-		setTimeout(() => {
-			submitted = false;
-			formData = { name: '', email: '', message: '' };
-		}, 5000);
+			if (!response.ok) {
+				throw new Error(result.error || 'Failed to send message');
+			}
+
+			submitted = true;
+
+			// Reset form after 5 seconds
+			setTimeout(() => {
+				submitted = false;
+				formData = { name: '', email: '', message: '' };
+			}, 5000);
+		} catch (error) {
+			console.error('Error submitting form:', error);
+			errorMessage = error instanceof Error ? error.message : 'Failed to send message. Please try again.';
+		} finally {
+			isSubmitting = false;
+		}
 	}
 </script>
 
@@ -83,7 +100,14 @@
 						<p>Thanks for reaching out! I'll get back to you as soon as possible.</p>
 					</div>
 				{:else}
-					<form on:submit={handleSubmit}>
+					<form onsubmit={handleSubmit}>
+						{#if errorMessage}
+							<div class="error-message">
+								<span class="error-icon">⚠️</span>
+								{errorMessage}
+							</div>
+						{/if}
+
 						<div class="form-row">
 							<div class="form-group">
 								<label for="name">Name</label>
@@ -232,6 +256,24 @@
 	.success-message p {
 		color: var(--color-text-secondary);
 		font-size: 1.125rem;
+	}
+
+	.error-message {
+		background: #fee;
+		border: var(--border-medium) solid #fcc;
+		border-radius: var(--radius-sm);
+		padding: var(--space-md);
+		color: #c33;
+		display: flex;
+		align-items: center;
+		gap: var(--space-sm);
+		font-weight: 500;
+		margin-bottom: var(--space-lg);
+	}
+
+	.error-icon {
+		font-size: 1.25rem;
+		flex-shrink: 0;
 	}
 
 	form {

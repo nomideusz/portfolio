@@ -1,20 +1,23 @@
 # Build stage - Updated for Node.js 20 compatibility
 FROM node:20-alpine as build
 
+# Install pnpm
+RUN npm install -g pnpm
+
 # Set working directory
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Copy package files and lock files
+COPY package*.json pnpm-lock.yaml ./
 
 # Install dependencies
-RUN npm ci
+RUN pnpm install --frozen-lockfile
 
 # Copy source code
 COPY . .
 
 # Build the application
-RUN npm run build
+RUN pnpm build
 
 # Production stage
 FROM nginx:alpine

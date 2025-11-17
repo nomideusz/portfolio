@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(npx sv create:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:pikastro.eu)",
+      "WebFetch(domain:zaur.app)",
+      "WebFetch(domain:kurcz.pl)",
+      "WebFetch(domain:wibroakustyka.ai)",
+      "WebFetch(domain:tutitutu.pl)",
+      "WebFetch(domain:intertechpoland.pl)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

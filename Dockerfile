@@ -1,5 +1,5 @@
-# Build stage - Updated for Node.js 20 compatibility
-FROM node:20-alpine as build
+# Use Node.js 20 for Railway deployment
+FROM node:20-alpine
 
 # Install pnpm
 RUN npm install -g pnpm
@@ -19,14 +19,8 @@ COPY . .
 # Build the application
 RUN pnpm build
 
-# Production stage
-FROM nginx:alpine
+# Expose port 3000 (Railway default)
+EXPOSE 3000
 
-# Copy built static files from build stage
-COPY --from=build /app/build /usr/share/nginx/html/
-
-# Copy custom nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Expose port 80
-EXPOSE 80
+# Start the application
+CMD ["node", "build/index.js"]

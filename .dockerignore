@@ -1,14 +1,10 @@
 node_modules
 npm-debug.log
 .svelte-kit
-src
 CLAUDE.md
 README.md
-package.json
-package-lock.json
-svelte.config.js
-tsconfig.json
-vite.config.ts
 deploy
 .git
 .gitignore
+*.log
+.DS_Store

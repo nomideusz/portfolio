@@ -24,7 +24,6 @@
 		"@rollup/rollup-win32-x64-msvc": "^4.53.2"
 	},
 	"dependencies": {
-		"@sveltejs/adapter-static": "^3.0.10",
 		"resend": "^6.4.2"
 	}
 }

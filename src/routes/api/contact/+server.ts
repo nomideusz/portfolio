@@ -1,9 +1,7 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { Resend } from 'resend';
-import { RESEND_API_KEY } from '$env/static/private';
-
-const resend = new Resend(RESEND_API_KEY);
+import { env } from '$env/dynamic/private';
 
 export const POST: RequestHandler = async ({ request }) => {
 	try {
@@ -26,7 +24,17 @@ export const POST: RequestHandler = async ({ request }) => {
 			);
 		}
 
+		// Check for API key
+		if (!env.RESEND_API_KEY) {
+			console.error('RESEND_API_KEY is not configured');
+			return json(
+				{ error: 'Email service is not configured' },
+				{ status: 500 }
+			);
+		}
+
 		// Send email using Resend
+		const resend = new Resend(env.RESEND_API_KEY);
 		const data = await resend.emails.send({
 			from: 'Portfolio Contact Form <onboarding@resend.dev>',
 			to: 'b.dymet@gmail.com',

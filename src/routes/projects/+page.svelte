@@ -295,6 +295,10 @@
 		margin-bottom: var(--space-lg);
 	}
 
+	.project-card.featured .project-header {
+		margin-top: var(--space-xl);
+	}
+
 	.project-number {
 		font-size: 3rem;
 		font-weight: 900;

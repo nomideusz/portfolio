@@ -7,10 +7,23 @@
 		link: string;
 	}
 
+	interface FormErrors {
+		name?: string;
+		email?: string;
+		message?: string;
+	}
+
 	let formData = $state({
 		name: '',
 		email: '',
 		message: ''
+	});
+
+	let errors = $state<FormErrors>({});
+	let touched = $state({
+		name: false,
+		email: false,
+		message: false
 	});
 
 	let submitted = $state(false);
@@ -44,8 +57,60 @@
 		}
 	];
 
+	function validateField(field: keyof FormErrors): string | undefined {
+		const value = formData[field].trim();
+
+		switch (field) {
+			case 'name':
+				if (!value) return 'Name is required';
+				if (value.length < 2) return 'Name must be at least 2 characters';
+				if (value.length > 100) return 'Name must be less than 100 characters';
+				break;
+
+			case 'email':
+				if (!value) return 'Email is required';
+				const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				if (!emailRegex.test(value)) return 'Please enter a valid email address';
+				break;
+
+			case 'message':
+				if (!value) return 'Message is required';
+				if (value.length < 10) return 'Message must be at least 10 characters';
+				if (value.length > 1000) return 'Message must be less than 1000 characters';
+				break;
+		}
+
+		return undefined;
+	}
+
+	function validateForm(): boolean {
+		const newErrors: FormErrors = {
+			name: validateField('name'),
+			email: validateField('email'),
+			message: validateField('message')
+		};
+
+		errors = newErrors;
+		return !newErrors.name && !newErrors.email && !newErrors.message;
+	}
+
+	function handleBlur(field: keyof FormErrors) {
+		touched[field] = true;
+		errors[field] = validateField(field);
+	}
+
 	async function handleSubmit(e: Event) {
 		e.preventDefault();
+
+		// Mark all fields as touched
+		touched = { name: true, email: true, message: true };
+
+		// Validate all fields
+		if (!validateForm()) {
+			errorMessage = 'Please fix the errors above before submitting';
+			return;
+		}
+
 		isSubmitting = true;
 		errorMessage = '';
 
@@ -70,6 +135,8 @@
 			setTimeout(() => {
 				submitted = false;
 				formData = { name: '', email: '', message: '' };
+				errors = {};
+				touched = { name: false, email: false, message: false };
 			}, 5000);
 		} catch (error) {
 			console.error('Error submitting form:', error);
@@ -100,9 +167,9 @@
 						<p>Thanks for reaching out! I'll get back to you as soon as possible.</p>
 					</div>
 				{:else}
-					<form onsubmit={handleSubmit}>
+					<form onsubmit={handleSubmit} novalidate>
 						{#if errorMessage}
-							<div class="error-message">
+							<div class="error-message-banner animate-fade-in-up">
 								<span class="error-icon">⚠️</span>
 								{errorMessage}
 							</div>
@@ -110,40 +177,61 @@
 
 						<div class="form-row">
 							<div class="form-group">
-								<label for="name">Name</label>
+								<label for="name">Name <span class="required">*</span></label>
 								<input
 									type="text"
 									id="name"
 									bind:value={formData.name}
-									required
+									onblur={() => handleBlur('name')}
 									placeholder="John Doe"
 									disabled={isSubmitting}
+									class:has-error={touched.name && errors.name}
 								/>
+								{#if touched.name && errors.name}
+									<div class="field-error">
+										<span class="error-icon-small">✕</span>
+										{errors.name}
+									</div>
+								{/if}
 							</div>
 
 							<div class="form-group">
-								<label for="email">Email</label>
+								<label for="email">Email <span class="required">*</span></label>
 								<input
 									type="email"
 									id="email"
 									bind:value={formData.email}
-									required
+									onblur={() => handleBlur('email')}
 									placeholder="john@example.com"
 									disabled={isSubmitting}
+									class:has-error={touched.email && errors.email}
 								/>
+								{#if touched.email && errors.email}
+									<div class="field-error">
+										<span class="error-icon-small">✕</span>
+										{errors.email}
+									</div>
+								{/if}
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="message">Message</label>
+							<label for="message">Message <span class="required">*</span></label>
 							<textarea
 								id="message"
 								bind:value={formData.message}
-								required
+								onblur={() => handleBlur('message')}
 								placeholder="Tell me about your project..."
 								rows="6"
 								disabled={isSubmitting}
+								class:has-error={touched.message && errors.message}
 							></textarea>
+							{#if touched.message && errors.message}
+								<div class="field-error">
+									<span class="error-icon-small">✕</span>
+									{errors.message}
+								</div>
+							{/if}
 						</div>
 
 						<button type="submit" class="btn btn-primary submit-btn" disabled={isSubmitting}>
@@ -230,50 +318,95 @@
 	.success-message {
 		text-align: center;
 		padding: var(--space-3xl) var(--space-xl);
+		position: relative;
+	}
+
+	.success-message::before {
+		content: '✨';
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		font-size: 2rem;
+		animation: float 3s ease-in-out infinite;
+	}
+
+	.success-message::after {
+		content: '🎉';
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		font-size: 2rem;
+		animation: float 3s ease-in-out infinite 0.5s;
 	}
 
 	.success-icon {
-		width: 80px;
-		height: 80px;
+		width: 100px;
+		height: 100px;
 		margin: 0 auto var(--space-lg);
-		background: var(--color-primary);
-		border-radius: var(--radius-lg);
+		background: var(--color-quaternary);
+		border-radius: var(--radius-blob);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: 3rem;
-		color: var(--color-white);
-		box-shadow: var(--shadow-brutal);
-		border: var(--border-thick) solid var(--color-border);
+		font-size: 3.5rem;
+		color: var(--color-text);
+		box-shadow: 5px 5px 0 var(--color-primary), 10px 10px 0 var(--color-secondary);
+		border: var(--border-extra-thick) solid var(--color-accent);
+		animation: float 4s ease-in-out infinite;
 	}
 
 	.success-message h3 {
-		font-size: 2rem;
-		color: var(--color-text);
-		margin-bottom: var(--space-sm);
+		font-size: 2.5rem;
+		color: var(--color-primary);
+		margin-bottom: var(--space-md);
+		text-shadow: 2px 2px 0 var(--color-secondary);
 	}
 
 	.success-message p {
 		color: var(--color-text-secondary);
-		font-size: 1.125rem;
+		font-size: 1.25rem;
+		font-weight: 600;
 	}
 
-	.error-message {
-		background: #fee;
-		border: var(--border-medium) solid #fcc;
-		border-radius: var(--radius-sm);
+	.error-message-banner {
+		background: #FFE5E5;
+		border: var(--border-medium) solid var(--color-primary);
+		border-left: var(--border-extra-thick) solid var(--color-primary);
+		border-radius: var(--radius-md);
 		padding: var(--space-md);
-		color: #c33;
+		color: #D32F2F;
 		display: flex;
 		align-items: center;
 		gap: var(--space-sm);
-		font-weight: 500;
+		font-weight: 600;
 		margin-bottom: var(--space-lg);
+		box-shadow: 4px 4px 0 rgba(255, 0, 110, 0.2);
 	}
 
 	.error-icon {
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 		flex-shrink: 0;
+	}
+
+	.field-error {
+		display: flex;
+		align-items: center;
+		gap: var(--space-xs);
+		color: var(--color-primary);
+		font-size: 0.875rem;
+		font-weight: 600;
+		margin-top: var(--space-xs);
+		animation: fadeInUp 0.3s ease-out;
+	}
+
+	.error-icon-small {
+		font-size: 0.875rem;
+		font-weight: 700;
+	}
+
+	.required {
+		color: var(--color-primary);
+		font-weight: 900;
 	}
 
 	form {
@@ -319,6 +452,18 @@
 		border-color: var(--color-primary);
 		transform: translate(-2px, -2px);
 		box-shadow: var(--shadow-md);
+	}
+
+	input.has-error,
+	textarea.has-error {
+		border-color: var(--color-primary);
+		background: rgba(255, 0, 110, 0.05);
+	}
+
+	input.has-error:focus,
+	textarea.has-error:focus {
+		border-color: var(--color-primary);
+		box-shadow: 0 0 0 3px rgba(255, 0, 110, 0.1), var(--shadow-md);
 	}
 
 	input:disabled,

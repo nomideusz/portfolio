@@ -262,12 +262,13 @@
 	.project-card.featured::before {
 		content: '★';
 		position: absolute;
-		top: -15px;
-		right: 20px;
+		top: -25px;
+		right: 15px;
 		font-size: 3rem;
 		color: var(--color-accent);
 		text-shadow: 3px 3px 0 var(--color-primary);
 		animation: float 2s ease-in-out infinite;
+		z-index: 5;
 	}
 
 	.featured-badge {

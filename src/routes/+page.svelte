@@ -362,6 +362,10 @@
 	}
 
 	.tech-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		text-align: center;
 		padding: var(--space-xl);
 		cursor: pointer;
@@ -370,6 +374,7 @@
 		border-radius: var(--radius-lg);
 		position: relative;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		min-height: 150px;
 	}
 
 	.tech-card:nth-child(1) { border-color: var(--color-primary); }

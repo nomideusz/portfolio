@@ -97,7 +97,7 @@
 		left: 0;
 		right: 0;
 		z-index: 1000;
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-bottom: var(--border-thick) solid var(--color-primary);
 		padding: 1rem 0;
 		transition: all var(--transition-base);
@@ -121,7 +121,7 @@
 	}
 
 	header.scrolled {
-		background: var(--color-white);
+		background: var(--color-surface);
 		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 		padding: 0.75rem 0;
 		border-bottom-color: var(--color-secondary);
@@ -246,7 +246,7 @@
 	}
 
 	footer {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-top: var(--border-extra-thick) solid;
 		border-image: linear-gradient(90deg,
 			var(--color-primary),

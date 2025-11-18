@@ -391,7 +391,7 @@
 		align-items: center;
 		gap: var(--space-md);
 		padding: var(--space-md);
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-radius: var(--radius-lg);
 		border: var(--border-medium) solid;
 		text-decoration: none;
@@ -400,25 +400,25 @@
 
 	.contact-method:nth-child(1) {
 		border-color: var(--color-primary);
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-left: var(--border-extra-thick) solid var(--color-primary);
 	}
 
 	.contact-method:nth-child(2) {
 		border-color: var(--color-secondary);
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-left: var(--border-extra-thick) solid var(--color-secondary);
 	}
 
 	.contact-method:nth-child(3) {
 		border-color: var(--color-accent);
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-left: var(--border-extra-thick) solid var(--color-accent);
 	}
 
 	.contact-method:nth-child(4) {
 		border-color: var(--color-tertiary);
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-left: var(--border-extra-thick) solid var(--color-tertiary);
 	}
 
@@ -465,13 +465,13 @@
 	}
 
 	.availability-card {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-quaternary);
 		border-left: var(--border-extra-thick) solid var(--color-quaternary);
 	}
 
 	.response-card {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-orange);
 		border-left: var(--border-extra-thick) solid var(--color-orange);
 	}

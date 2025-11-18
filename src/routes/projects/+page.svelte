@@ -224,37 +224,37 @@
 	}
 
 	.project-card:nth-child(6n+1) {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-primary);
 		border-left: var(--border-extra-thick) solid var(--color-primary);
 	}
 
 	.project-card:nth-child(6n+2) {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-secondary);
 		border-left: var(--border-extra-thick) solid var(--color-secondary);
 	}
 
 	.project-card:nth-child(6n+3) {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-accent);
 		border-left: var(--border-extra-thick) solid var(--color-accent);
 	}
 
 	.project-card:nth-child(6n+4) {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-tertiary);
 		border-left: var(--border-extra-thick) solid var(--color-tertiary);
 	}
 
 	.project-card:nth-child(6n+5) {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-quaternary);
 		border-left: var(--border-extra-thick) solid var(--color-quaternary);
 	}
 
 	.project-card:nth-child(6n+6) {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-orange);
 		border-left: var(--border-extra-thick) solid var(--color-orange);
 	}
@@ -330,7 +330,7 @@
 	}
 
 	.tech-badge {
-		background: var(--color-white);
+		background: var(--color-surface);
 		color: var(--color-text);
 		padding: var(--space-xs) var(--space-md);
 		border-radius: var(--radius-full);

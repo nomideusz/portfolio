@@ -231,25 +231,25 @@
 	}
 
 	.stat-card:nth-child(1) {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-primary);
 		border-top: var(--border-extra-thick) solid var(--color-primary);
 	}
 
 	.stat-card:nth-child(2) {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-secondary);
 		border-top: var(--border-extra-thick) solid var(--color-secondary);
 	}
 
 	.stat-card:nth-child(3) {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-accent);
 		border-top: var(--border-extra-thick) solid var(--color-accent);
 	}
 
 	.stat-card:nth-child(4) {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-tertiary);
 		border-top: var(--border-extra-thick) solid var(--color-tertiary);
 	}
@@ -312,7 +312,7 @@
 
 	.skill-bar {
 		height: 16px;
-		background: var(--color-white);
+		background: var(--color-bg-secondary);
 		border-radius: var(--radius-full);
 		overflow: hidden;
 		margin-bottom: var(--space-sm);
@@ -344,7 +344,7 @@
 		height: 10px;
 		background: var(--color-accent);
 		border-radius: 50%;
-		border: 2px solid var(--color-white);
+		border: 2px solid var(--color-surface);
 		box-shadow: 0 0 8px var(--color-accent);
 	}
 

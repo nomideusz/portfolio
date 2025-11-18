@@ -282,7 +282,7 @@
 		animation: float 6s ease-in-out infinite;
 		border: var(--border-thick) solid var(--color-accent);
 		box-shadow: 6px 6px 0 var(--color-tertiary);
-		background: var(--color-white);
+		background: var(--color-surface);
 	}
 
 	.card-2 {
@@ -291,7 +291,7 @@
 		animation: float 7s ease-in-out infinite 1s;
 		border: var(--border-thick) solid var(--color-secondary);
 		box-shadow: 6px 6px 0 var(--color-primary);
-		background: var(--color-white);
+		background: var(--color-surface);
 	}
 
 	.card-3 {
@@ -300,7 +300,7 @@
 		animation: float 8s ease-in-out infinite 2s;
 		border: var(--border-thick) solid var(--color-quaternary);
 		box-shadow: 6px 6px 0 var(--color-orange);
-		background: var(--color-white);
+		background: var(--color-surface);
 	}
 
 	.code-snippet {
@@ -369,7 +369,7 @@
 		text-align: center;
 		padding: var(--space-xl);
 		cursor: pointer;
-		background: var(--color-white);
+		background: var(--color-surface);
 		border: var(--border-medium) solid;
 		border-radius: var(--radius-lg);
 		position: relative;
@@ -425,19 +425,19 @@
 	}
 
 	.feature-card:nth-child(1) {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-primary);
 		border-left: var(--border-extra-thick) solid var(--color-primary);
 	}
 
 	.feature-card:nth-child(2) {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-secondary);
 		border-left: var(--border-extra-thick) solid var(--color-secondary);
 	}
 
 	.feature-card:nth-child(3) {
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-color: var(--color-accent);
 		border-left: var(--border-extra-thick) solid var(--color-accent);
 	}
@@ -447,7 +447,7 @@
 		margin-bottom: var(--space-md);
 		display: inline-block;
 		padding: var(--space-md);
-		background: var(--color-white);
+		background: var(--color-surface);
 		border-radius: var(--radius-full);
 		border: var(--border-medium) solid currentColor;
 		box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);

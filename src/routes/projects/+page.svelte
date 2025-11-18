@@ -292,6 +292,7 @@
 		text-shadow: 3px 3px 0 var(--color-primary);
 		animation: float 2s ease-in-out infinite;
 		z-index: 5;
+		pointer-events: none;
 	}
 
 	.featured-badge {
@@ -309,6 +310,7 @@
 		border: var(--border-medium) solid var(--color-primary);
 		box-shadow: 4px 4px 0 var(--color-secondary), 8px 8px 0 var(--color-tertiary);
 		z-index: 10;
+		pointer-events: none;
 	}
 
 	.project-header {

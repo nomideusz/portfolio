@@ -75,6 +75,23 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Projects - Bartosz Dymet | Web Development Portfolio</title>
+	<meta name="description" content="Explore my portfolio of web development projects including SvelteKit applications, PWAs, and modern websites. Featured work: Zaur booking platform, Intertech Poland B2B site, and more." />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Projects - Bartosz Dymet Web Development Portfolio" />
+	<meta property="og:description" content="Portfolio of web development projects featuring SvelteKit, TypeScript, and modern web technologies." />
+	<meta property="og:image" content="/bartek.png" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Projects - Bartosz Dymet Portfolio" />
+	<meta name="twitter:description" content="Portfolio of web development projects featuring SvelteKit, TypeScript, and modern web technologies." />
+	<meta name="twitter:image" content="/bartek.png" />
+</svelte:head>
+
 <section class="projects-page">
 	<div class="container">
 		<div class="page-header">
@@ -98,7 +115,7 @@
 
 		<div class="projects-grid">
 			{#each getFilteredProjects() as project, index}
-				<article class="project-card card" class:featured={project.featured}>
+				<article class="project-card card scroll-reveal" class:featured={project.featured}>
 					{#if project.featured}
 						<div class="featured-badge">Featured</div>
 					{/if}
@@ -221,6 +238,12 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 400px;
+		transition: transform var(--transition-base), box-shadow var(--transition-base);
+	}
+
+	.project-card:hover {
+		transform: translateY(-8px) scale(1.02);
+		box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 	}
 
 	.project-card:nth-child(6n+1) {

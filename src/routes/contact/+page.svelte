@@ -147,6 +147,23 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Contact - Bartosz Dymet | Get In Touch</title>
+	<meta name="description" content="Get in touch with Bartosz Dymet for freelance web development projects. Available for hire - full-stack developer specializing in SvelteKit and TypeScript." />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Contact Bartosz Dymet - Full-Stack Web Developer" />
+	<meta property="og:description" content="Available for freelance web development projects. Get in touch to discuss your project." />
+	<meta property="og:image" content="/bartek.png" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Contact Bartosz Dymet - Web Developer" />
+	<meta name="twitter:description" content="Available for freelance web development projects. Let's build something amazing together." />
+	<meta name="twitter:image" content="/bartek.png" />
+</svelte:head>
+
 <section class="contact-page">
 	<div class="container">
 		<div class="page-header">

@@ -49,6 +49,23 @@
 	]);
 </script>
 
+<svelte:head>
+	<title>About - Bartosz Dymet | Full-Stack Web Developer</title>
+	<meta name="description" content="Learn about Bartosz Dymet, a full-stack web developer with 15+ years of experience. Expertise in SvelteKit, TypeScript, Docker, and modern web technologies." />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="profile" />
+	<meta property="og:title" content="About Bartosz Dymet - Full-Stack Web Developer" />
+	<meta property="og:description" content="Full-stack developer with 15+ years of experience in modern web technologies, data analysis, and team leadership." />
+	<meta property="og:image" content="/bartek.png" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="About Bartosz Dymet - Full-Stack Web Developer" />
+	<meta name="twitter:description" content="Full-stack developer with 15+ years of experience in modern web technologies." />
+	<meta name="twitter:image" content="/bartek.png" />
+</svelte:head>
+
 <section class="about-page">
 	<div class="container">
 		<div class="page-header">
@@ -84,6 +101,12 @@
 				<p>
 					I'm fluent in Polish and English, available to start immediately, and willing to travel for the right opportunity.
 				</p>
+				<div class="resume-download">
+					<a href="/resume.pdf" download class="btn btn-primary">
+						<span>📄</span>
+						Download Resume
+					</a>
+				</div>
 			</div>
 
 			<div class="stats-grid">
@@ -215,8 +238,19 @@
 		margin-bottom: var(--space-lg);
 	}
 
-	.bio-section p:last-child {
-		margin-bottom: 0;
+	.bio-section p:last-of-type {
+		margin-bottom: var(--space-xl);
+	}
+
+	.resume-download {
+		margin-top: var(--space-xl);
+		padding-top: var(--space-lg);
+		border-top: var(--border-medium) solid var(--color-border);
+	}
+
+	.resume-download .btn {
+		font-size: 1.125rem;
+		padding: var(--space-md) var(--space-xl);
 	}
 
 	.stats-grid {

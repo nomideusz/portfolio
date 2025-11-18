@@ -9,6 +9,23 @@
 	if (typeof window !== 'undefined') {
 		window.addEventListener('scroll', () => {
 			scrolled = window.scrollY > 50;
+			revealOnScroll();
+		});
+
+		// Initial check on load
+		setTimeout(revealOnScroll, 100);
+	}
+
+	function revealOnScroll() {
+		const reveals = document.querySelectorAll('.scroll-reveal');
+
+		reveals.forEach(element => {
+			const elementTop = element.getBoundingClientRect().top;
+			const elementVisible = 150;
+
+			if (elementTop < window.innerHeight - elementVisible) {
+				element.classList.add('revealed');
+			}
 		});
 	}
 
@@ -18,6 +35,13 @@
 
 	function closeMobileMenu() {
 		mobileMenuOpen = false;
+	}
+
+	function scrollToTop() {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
 	}
 </script>
 
@@ -82,6 +106,17 @@
 			</div>
 		</div>
 	</footer>
+
+	<!-- Back to top button -->
+	{#if scrolled}
+		<button
+			class="back-to-top"
+			onclick={scrollToTop}
+			aria-label="Scroll to top"
+		>
+			<span class="arrow-up">↑</span>
+		</button>
+	{/if}
 </div>
 
 <style>
@@ -407,6 +442,49 @@
 		}
 
 		.logo {
+			font-size: 1.25rem;
+		}
+	}
+
+	/* Back to top button */
+	.back-to-top {
+		position: fixed;
+		bottom: var(--space-xl);
+		right: var(--space-xl);
+		width: 56px;
+		height: 56px;
+		background: var(--color-primary);
+		color: var(--color-white);
+		border: var(--border-medium) solid var(--color-accent);
+		border-radius: var(--radius-full);
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.5rem;
+		box-shadow: 5px 5px 0 var(--color-secondary), 10px 10px 0 var(--color-tertiary);
+		transition: all var(--transition-base);
+		z-index: 999;
+		animation: fadeInUp 0.3s ease-out;
+	}
+
+	.back-to-top:hover {
+		transform: translateY(-4px);
+		box-shadow: 6px 6px 0 var(--color-secondary), 12px 12px 0 var(--color-tertiary);
+		background: var(--color-orange);
+	}
+
+	.arrow-up {
+		font-weight: 900;
+		font-size: 2rem;
+	}
+
+	@media (max-width: 768px) {
+		.back-to-top {
+			bottom: var(--space-lg);
+			right: var(--space-lg);
+			width: 48px;
+			height: 48px;
 			font-size: 1.25rem;
 		}
 	}

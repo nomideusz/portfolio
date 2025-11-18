@@ -14,6 +14,23 @@
 	];
 </script>
 
+<svelte:head>
+	<meta name="description" content="Full-stack web developer with 15+ years of experience in SvelteKit, TypeScript, and modern web technologies. Available for freelance projects and collaborations." />
+	<meta name="keywords" content="web developer, full-stack developer, SvelteKit, TypeScript, freelance, Bartosz Dymet, Krakow" />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Bartosz Dymet - Full-Stack Web Developer" />
+	<meta property="og:description" content="Full-stack web developer with 15+ years of experience in SvelteKit, TypeScript, and modern web technologies. Available for freelance projects." />
+	<meta property="og:image" content="/bartek.png" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Bartosz Dymet - Full-Stack Web Developer" />
+	<meta name="twitter:description" content="Full-stack web developer with 15+ years of experience in SvelteKit, TypeScript, and modern web technologies." />
+	<meta name="twitter:image" content="/bartek.png" />
+</svelte:head>
+
 <section class="hero">
 	<div class="container">
 		<div class="hero-content animate-fade-in-up">

@@ -94,17 +94,38 @@
 		left: 0;
 		right: 0;
 		z-index: 1000;
-		background: var(--color-bg);
-		border-bottom: var(--border-medium) solid transparent;
+		background: linear-gradient(90deg, #FFF4E6 0%, #E6F7FF 50%, #FFF9E6 100%);
+		border-bottom: var(--border-thick) solid transparent;
 		padding: 1rem 0;
 		transition: all var(--transition-base);
 	}
 
+	header::before {
+		content: '';
+		position: absolute;
+		bottom: -7px;
+		left: 0;
+		right: 0;
+		height: 7px;
+		background: linear-gradient(90deg,
+			var(--color-primary) 0%,
+			var(--color-secondary) 25%,
+			var(--color-accent) 50%,
+			var(--color-tertiary) 75%,
+			var(--color-quaternary) 100%
+		);
+		opacity: 0;
+		transition: opacity var(--transition-base);
+	}
+
 	header.scrolled {
-		background: var(--color-bg);
-		border-bottom: var(--border-medium) solid var(--color-border);
-		box-shadow: var(--shadow-md);
+		background: var(--color-surface);
+		box-shadow: 8px 8px 0 var(--color-primary), 16px 16px 0 var(--color-secondary);
 		padding: 0.75rem 0;
+	}
+
+	header.scrolled::before {
+		opacity: 1;
 	}
 
 	nav {
@@ -192,20 +213,31 @@
 		position: relative;
 	}
 
+	.nav-links a:not(.btn) {
+		position: relative;
+	}
+
+	.nav-links li:nth-child(1) a:not(.btn):hover { color: var(--color-primary); }
+	.nav-links li:nth-child(2) a:not(.btn):hover { color: var(--color-secondary); }
+	.nav-links li:nth-child(3) a:not(.btn):hover { color: var(--color-accent); }
+
 	.nav-links a:not(.btn)::after {
 		content: '';
 		position: absolute;
 		bottom: -4px;
 		left: 0;
 		width: 0;
-		height: 3px;
-		background: var(--color-primary);
+		height: 4px;
+		border-radius: var(--radius-full);
 		transition: width var(--transition-base);
 	}
 
+	.nav-links li:nth-child(1) a:not(.btn)::after { background: var(--color-primary); }
+	.nav-links li:nth-child(2) a:not(.btn)::after { background: var(--color-secondary); }
+	.nav-links li:nth-child(3) a:not(.btn)::after { background: var(--color-accent); }
+
 	.nav-links a:not(.btn):hover::after {
 		width: 100%;
-		background: var(--color-secondary);
 	}
 
 	main {
@@ -215,9 +247,33 @@
 	}
 
 	footer {
-		background: var(--color-bg-secondary);
-		border-top: var(--border-thick) solid var(--color-border);
+		background: linear-gradient(135deg, #FFF4E6 0%, #E6F7FF 50%, #FFF9E6 100%);
+		border-top: var(--border-extra-thick) solid;
+		border-image: linear-gradient(90deg,
+			var(--color-primary),
+			var(--color-secondary),
+			var(--color-accent),
+			var(--color-tertiary),
+			var(--color-quaternary)
+		) 1;
 		margin-top: var(--space-3xl);
+		position: relative;
+	}
+
+	footer::before {
+		content: '';
+		position: absolute;
+		top: -5px;
+		left: 0;
+		right: 0;
+		height: 5px;
+		background: linear-gradient(90deg,
+			var(--color-quaternary) 0%,
+			var(--color-tertiary) 25%,
+			var(--color-accent) 50%,
+			var(--color-secondary) 75%,
+			var(--color-primary) 100%
+		);
 	}
 
 	.footer-content {

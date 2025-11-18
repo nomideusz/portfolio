@@ -124,10 +124,27 @@
 		width: 200px;
 		height: 200px;
 		background: var(--color-accent);
-		opacity: 0.3;
-		border-radius: var(--radius-lg);
+		border: var(--border-extra-thick) solid var(--color-secondary);
+		border-radius: var(--radius-blob);
 		pointer-events: none;
 		transform: rotate(15deg);
+		box-shadow: var(--shadow-lg);
+		animation: float 6s ease-in-out infinite;
+	}
+
+	.hero::after {
+		content: '';
+		position: absolute;
+		bottom: 15%;
+		left: 8%;
+		width: 150px;
+		height: 150px;
+		background: var(--color-quaternary);
+		border: var(--border-thick) solid var(--color-tertiary);
+		border-radius: 50%;
+		pointer-events: none;
+		animation: float 8s ease-in-out infinite reverse;
+		box-shadow: 5px 5px 0 var(--color-orange);
 	}
 
 	.container {
@@ -146,16 +163,17 @@
 	.badge {
 		display: inline-block;
 		padding: var(--space-xs) var(--space-md);
-		background: var(--color-secondary);
-		color: var(--color-white);
-		border-radius: var(--radius-sm);
+		background: var(--color-accent);
+		color: var(--color-black);
+		border-radius: var(--radius-full);
 		font-size: 0.875rem;
-		font-weight: 700;
+		font-weight: 900;
 		margin-bottom: var(--space-lg);
-		box-shadow: var(--shadow-md);
-		border: var(--border-medium) solid var(--color-border);
+		box-shadow: 4px 4px 0 var(--color-tertiary), 8px 8px 0 var(--color-primary);
+		border: var(--border-medium) solid var(--color-orange);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
+		animation: float 3s ease-in-out infinite;
 	}
 
 	.greeting {
@@ -212,10 +230,10 @@
 		position: relative;
 		width: 280px;
 		height: 280px;
-		border-radius: var(--radius-lg);
+		border-radius: var(--radius-blob);
 		overflow: hidden;
-		border: var(--border-extra-thick) solid var(--color-border);
-		box-shadow: var(--shadow-xl);
+		border: var(--border-extra-thick) solid var(--color-primary);
+		box-shadow: 8px 8px 0 var(--color-secondary), 16px 16px 0 var(--color-accent);
 		animation: float 4s ease-in-out infinite;
 	}
 
@@ -233,30 +251,28 @@
 	.image-glow {
 		position: absolute;
 		inset: -12px;
-		background: var(--color-primary);
+		background: var(--color-tertiary);
 		z-index: -1;
-		border-radius: var(--radius-lg);
+		border-radius: var(--radius-blob);
 		animation: pulse 3s ease-in-out infinite;
 	}
 
 	@keyframes pulse {
 		0%, 100% {
-			opacity: 0.8;
-			transform: translate(8px, 8px);
+			opacity: 0.9;
+			transform: translate(12px, 12px) rotate(0deg);
 		}
 		50% {
 			opacity: 1;
-			transform: translate(12px, 12px);
+			transform: translate(16px, 16px) rotate(5deg);
 		}
 	}
 
 	.floating-card {
 		position: absolute;
 		background: var(--color-surface);
-		border-radius: var(--radius-lg);
+		border-radius: var(--radius-xl);
 		padding: var(--space-lg);
-		box-shadow: var(--shadow-lg);
-		border: var(--border-thick) solid var(--color-border);
 		z-index: 2;
 	}
 
@@ -264,18 +280,27 @@
 		top: 10%;
 		left: 10%;
 		animation: float 6s ease-in-out infinite;
+		border: var(--border-thick) solid var(--color-accent);
+		box-shadow: 6px 6px 0 var(--color-tertiary);
+		background: linear-gradient(135deg, #FFF9E6 0%, #FFE6F0 100%);
 	}
 
 	.card-2 {
 		top: 40%;
 		right: 10%;
 		animation: float 7s ease-in-out infinite 1s;
+		border: var(--border-thick) solid var(--color-secondary);
+		box-shadow: 6px 6px 0 var(--color-primary);
+		background: linear-gradient(135deg, #E6F7FF 0%, #F0E6FF 100%);
 	}
 
 	.card-3 {
 		bottom: 15%;
 		left: 25%;
 		animation: float 8s ease-in-out infinite 2s;
+		border: var(--border-thick) solid var(--color-quaternary);
+		box-shadow: 6px 6px 0 var(--color-orange);
+		background: linear-gradient(135deg, #E6FFF0 0%, #FFF4E6 100%);
 	}
 
 	.code-snippet {
@@ -340,15 +365,45 @@
 		text-align: center;
 		padding: var(--space-xl);
 		cursor: pointer;
+		background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
+		border: var(--border-medium) solid;
+		border-radius: var(--radius-lg);
+		position: relative;
+	}
+
+	.tech-card:nth-child(1) { border-color: var(--color-primary); }
+	.tech-card:nth-child(2) { border-color: var(--color-secondary); }
+	.tech-card:nth-child(3) { border-color: var(--color-accent); }
+	.tech-card:nth-child(4) { border-color: var(--color-tertiary); }
+	.tech-card:nth-child(5) { border-color: var(--color-quaternary); }
+	.tech-card:nth-child(6) { border-color: var(--color-orange); }
+	.tech-card:nth-child(7) { border-color: var(--color-lime); }
+	.tech-card:nth-child(8) { border-color: var(--color-primary); }
+
+	.tech-card::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: inherit;
+		border-radius: var(--radius-lg);
+		transform: rotate(3deg);
+		z-index: -1;
+		opacity: 0;
+		transition: all var(--transition-base);
+	}
+
+	.tech-card:hover::after {
+		opacity: 0.7;
 	}
 
 	.tech-icon {
 		font-size: 3rem;
 		margin-bottom: var(--space-sm);
+		filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.1));
 	}
 
 	.tech-name {
-		font-weight: 600;
+		font-weight: 700;
 		color: var(--color-text);
 	}
 
@@ -360,23 +415,50 @@
 
 	.feature-card {
 		padding: var(--space-xl);
+		position: relative;
+	}
+
+	.feature-card:nth-child(1) {
+		background: linear-gradient(135deg, #FFF4E6 0%, #FFE6F0 100%);
+		border-color: var(--color-primary);
+	}
+
+	.feature-card:nth-child(2) {
+		background: linear-gradient(135deg, #E6F7FF 0%, #F0E6FF 100%);
+		border-color: var(--color-secondary);
+	}
+
+	.feature-card:nth-child(3) {
+		background: linear-gradient(135deg, #FFF9E6 0%, #E6FFF0 100%);
+		border-color: var(--color-accent);
 	}
 
 	.feature-icon {
-		font-size: 3rem;
+		font-size: 4rem;
 		margin-bottom: var(--space-md);
+		display: inline-block;
+		padding: var(--space-md);
+		background: var(--color-white);
+		border-radius: var(--radius-full);
+		border: var(--border-medium) solid currentColor;
+		box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
 	}
+
+	.feature-card:nth-child(1) .feature-icon { color: var(--color-primary); }
+	.feature-card:nth-child(2) .feature-icon { color: var(--color-secondary); }
+	.feature-card:nth-child(3) .feature-icon { color: var(--color-accent); }
 
 	.feature-card h3 {
 		color: var(--color-text);
 		margin-bottom: var(--space-md);
-		font-size: 1.5rem;
+		font-size: 1.75rem;
 	}
 
 	.feature-card p {
 		color: var(--color-text-secondary);
 		line-height: 1.7;
 		margin: 0;
+		font-weight: 500;
 	}
 
 	@media (max-width: 1024px) {

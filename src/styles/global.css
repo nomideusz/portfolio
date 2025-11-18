@@ -1,33 +1,39 @@
 :root {
-	/* Color Palette - Brutalist & Bold */
-	--color-primary: #0066FF;
-	--color-primary-dark: #0052CC;
-	--color-secondary: #FF0080;
-	--color-accent: #FFFF00;
-	--color-black: #000000;
+	/* Color Palette - Vibrant Maximalist */
+	--color-primary: #FF006E;        /* Hot Pink */
+	--color-primary-dark: #D90061;
+	--color-secondary: #00F5FF;      /* Cyan */
+	--color-accent: #FFBE0B;         /* Bright Yellow */
+	--color-tertiary: #8338EC;       /* Purple */
+	--color-quaternary: #06FFA5;     /* Mint Green */
+	--color-orange: #FF5400;         /* Vibrant Orange */
+	--color-lime: #CCFF00;           /* Electric Lime */
+	--color-black: #0A0A0A;
 	--color-white: #FFFFFF;
 
 	/* Backgrounds */
-	--color-bg: #FFFFFF;
-	--color-bg-secondary: #F5F5F5;
-	--color-bg-tertiary: #E8E8E8;
+	--color-bg: #FFFEF7;             /* Warm white */
+	--color-bg-secondary: #FFF4E6;   /* Peachy cream */
+	--color-bg-tertiary: #E6F7FF;    /* Light cyan */
 	--color-surface: #FFFFFF;
 
 	/* Text Colors */
-	--color-text: #000000;
-	--color-text-secondary: #333333;
-	--color-text-tertiary: #666666;
+	--color-text: #1A1A1A;
+	--color-text-secondary: #2D2D2D;
+	--color-text-tertiary: #4A4A4A;
 
-	/* Borders & Dividers */
-	--color-border: #000000;
-	--color-border-light: #CCCCCC;
+	/* Borders & Dividers - Multiple vibrant options */
+	--color-border: #FF006E;
+	--color-border-secondary: #00F5FF;
+	--color-border-tertiary: #FFBE0B;
+	--color-border-quaternary: #8338EC;
 
-	/* Brutalist Shadows - Solid offset shadows instead of blur */
-	--shadow-sm: 2px 2px 0 rgba(0, 0, 0, 1);
-	--shadow-md: 4px 4px 0 rgba(0, 0, 0, 1);
-	--shadow-lg: 6px 6px 0 rgba(0, 0, 0, 1);
-	--shadow-xl: 8px 8px 0 rgba(0, 0, 0, 1);
-	--shadow-brutal: 4px 4px 0 var(--color-primary);
+	/* Maximalist Shadows - Multi-layered, colorful */
+	--shadow-sm: 3px 3px 0 #FF006E, 6px 6px 0 #00F5FF;
+	--shadow-md: 4px 4px 0 #FFBE0B, 8px 8px 0 #8338EC;
+	--shadow-lg: 5px 5px 0 #06FFA5, 10px 10px 0 #FF5400;
+	--shadow-xl: 6px 6px 0 #FF006E, 12px 12px 0 #00F5FF, 18px 18px 0 #FFBE0B;
+	--shadow-brutal: 5px 5px 0 var(--color-secondary), 10px 10px 0 var(--color-accent);
 
 	/* Spacing Scale */
 	--space-xs: 0.5rem;
@@ -38,19 +44,20 @@
 	--space-2xl: 4rem;
 	--space-3xl: 6rem;
 
-	/* Border Radius - Minimal for brutalist aesthetic */
-	--radius-sm: 0;
-	--radius-md: 0;
-	--radius-lg: 2px;
-	--radius-xl: 4px;
-	--radius-2xl: 4px;
-	--radius-full: 0;
+	/* Border Radius - Playful variety */
+	--radius-sm: 8px;
+	--radius-md: 12px;
+	--radius-lg: 20px;
+	--radius-xl: 30px;
+	--radius-2xl: 40px;
+	--radius-full: 9999px;
+	--radius-blob: 63% 37% 54% 46% / 55% 48% 52% 45%;
 
-	/* Border Width - Bold & Thick */
-	--border-thin: 2px;
-	--border-medium: 3px;
-	--border-thick: 4px;
-	--border-extra-thick: 6px;
+	/* Border Width - Extra Bold & Chunky */
+	--border-thin: 3px;
+	--border-medium: 5px;
+	--border-thick: 7px;
+	--border-extra-thick: 10px;
 
 	/* Typography */
 	--font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -64,27 +71,28 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		/* Backgrounds */
-		--color-bg: #000000;
-		--color-bg-secondary: #1A1A1A;
-		--color-bg-tertiary: #2A2A2A;
-		--color-surface: #0A0A0A;
+		/* Backgrounds - Keep them vibrant even in dark mode! */
+		--color-bg: #1A0A2E;             /* Deep purple */
+		--color-bg-secondary: #16213E;   /* Dark blue */
+		--color-bg-tertiary: #0F3460;    /* Navy */
+		--color-surface: #1F1235;
 
 		/* Text Colors */
 		--color-text: #FFFFFF;
-		--color-text-secondary: #CCCCCC;
-		--color-text-tertiary: #999999;
+		--color-text-secondary: #E8E8E8;
+		--color-text-tertiary: #B8B8B8;
 
-		/* Borders */
-		--color-border: #FFFFFF;
-		--color-border-light: #444444;
+		/* Keep vibrant borders in dark mode */
+		--color-border: #FF006E;
+		--color-border-secondary: #00F5FF;
+		--color-border-tertiary: #FFBE0B;
 
-		/* Brutalist Shadows - Lighter for dark mode */
-		--shadow-sm: 2px 2px 0 rgba(255, 255, 255, 0.2);
-		--shadow-md: 4px 4px 0 rgba(255, 255, 255, 0.2);
-		--shadow-lg: 6px 6px 0 rgba(255, 255, 255, 0.2);
-		--shadow-xl: 8px 8px 0 rgba(255, 255, 255, 0.2);
-		--shadow-brutal: 4px 4px 0 var(--color-primary);
+		/* Maximalist Shadows - Even more vibrant in dark mode */
+		--shadow-sm: 3px 3px 0 #FF006E, 6px 6px 0 #00F5FF;
+		--shadow-md: 4px 4px 0 #FFBE0B, 8px 8px 0 #8338EC;
+		--shadow-lg: 5px 5px 0 #06FFA5, 10px 10px 0 #FF5400;
+		--shadow-xl: 6px 6px 0 #FF006E, 12px 12px 0 #00F5FF, 18px 18px 0 #FFBE0B;
+		--shadow-brutal: 5px 5px 0 var(--color-secondary), 10px 10px 0 var(--color-accent);
 	}
 }
 
@@ -179,13 +187,14 @@ a:hover {
 	}
 }
 
-/* Accent text replaces gradient-text - solid color, bold styling */
+/* Accent text - vibrant and bold */
 .gradient-text,
 .accent-text {
 	color: var(--color-primary);
 	font-weight: 900;
 	position: relative;
 	display: inline-block;
+	text-shadow: 3px 3px 0 var(--color-secondary);
 }
 
 .card {
@@ -194,11 +203,33 @@ a:hover {
 	padding: var(--space-lg);
 	border: var(--border-thick) solid var(--color-border);
 	transition: all var(--transition-base);
+	position: relative;
+	overflow: visible;
+}
+
+.card::before {
+	content: '';
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	right: -5px;
+	bottom: -5px;
+	border: var(--border-medium) solid var(--color-border-secondary);
+	border-radius: var(--radius-lg);
+	z-index: -1;
+	opacity: 0;
+	transition: all var(--transition-base);
 }
 
 .card:hover {
-	transform: translate(-2px, -2px);
+	transform: translate(-4px, -4px);
 	box-shadow: var(--shadow-lg);
+}
+
+.card:hover::before {
+	opacity: 1;
+	top: 8px;
+	left: 8px;
 }
 
 .btn {
@@ -219,26 +250,47 @@ a:hover {
 .btn-primary {
 	background: var(--color-primary);
 	color: var(--color-white);
-	border-color: var(--color-border);
+	border: var(--border-medium) solid var(--color-tertiary);
 	box-shadow: var(--shadow-md);
+	position: relative;
+	overflow: hidden;
+}
+
+.btn-primary::before {
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: var(--color-secondary);
+	z-index: -1;
+	transition: transform var(--transition-base);
+	transform: translateX(-100%);
 }
 
 .btn-primary:hover {
-	background: var(--color-secondary);
-	transform: translate(-2px, -2px);
-	box-shadow: var(--shadow-lg);
+	background: var(--color-orange);
+	border-color: var(--color-accent);
+	transform: translate(-4px, -4px);
+	box-shadow: var(--shadow-xl);
+}
+
+.btn-primary:hover::before {
+	transform: translateX(0);
 }
 
 .btn-secondary {
-	background: var(--color-bg);
-	color: var(--color-text);
-	border: var(--border-medium) solid var(--color-border);
+	background: var(--color-accent);
+	color: var(--color-black);
+	border: var(--border-medium) solid var(--color-tertiary);
+	box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary:hover {
-	background: var(--color-accent);
-	color: var(--color-black);
-	transform: translate(-2px, -2px);
+	background: var(--color-quaternary);
+	border-color: var(--color-primary);
+	transform: translate(-4px, -4px);
 	box-shadow: var(--shadow-md);
 }
 

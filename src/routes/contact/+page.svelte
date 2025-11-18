@@ -391,18 +391,36 @@
 		align-items: center;
 		gap: var(--space-md);
 		padding: var(--space-md);
-		background: var(--color-bg-secondary);
-		border-radius: var(--radius-sm);
-		border: var(--border-medium) solid var(--color-border);
+		background: var(--color-white);
+		border-radius: var(--radius-lg);
+		border: var(--border-medium) solid;
 		text-decoration: none;
 		transition: all var(--transition-base);
 	}
 
+	.contact-method:nth-child(1) {
+		border-color: var(--color-primary);
+		background: linear-gradient(135deg, #FFF 0%, #FFE6F0 100%);
+	}
+
+	.contact-method:nth-child(2) {
+		border-color: var(--color-secondary);
+		background: linear-gradient(135deg, #FFF 0%, #E6F7FF 100%);
+	}
+
+	.contact-method:nth-child(3) {
+		border-color: var(--color-accent);
+		background: linear-gradient(135deg, #FFF 0%, #FFF9E6 100%);
+	}
+
+	.contact-method:nth-child(4) {
+		border-color: var(--color-tertiary);
+		background: linear-gradient(135deg, #FFF 0%, #F0E6FF 100%);
+	}
+
 	.contact-method:hover {
-		transform: translate(-2px, -2px);
-		background: var(--color-accent);
-		border-color: var(--color-border);
-		box-shadow: var(--shadow-md);
+		transform: translate(-4px, -4px);
+		box-shadow: 6px 6px 0 currentColor;
 	}
 
 	.method-icon {
@@ -440,6 +458,16 @@
 	.response-card {
 		padding: var(--space-lg);
 		text-align: center;
+	}
+
+	.availability-card {
+		background: linear-gradient(135deg, #E6FFF0 0%, #E6F7FF 100%);
+		border-color: var(--color-quaternary);
+	}
+
+	.response-card {
+		background: linear-gradient(135deg, #FFF9E6 0%, #FFE6F0 100%);
+		border-color: var(--color-orange);
 	}
 
 	.availability-icon,

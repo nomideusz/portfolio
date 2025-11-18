@@ -185,10 +185,10 @@
 	.profile-image-small {
 		width: 100px;
 		height: 100px;
-		border-radius: var(--radius-lg);
+		border-radius: var(--radius-blob);
 		overflow: hidden;
 		border: var(--border-thick) solid var(--color-primary);
-		box-shadow: var(--shadow-md);
+		box-shadow: 5px 5px 0 var(--color-secondary), 10px 10px 0 var(--color-accent);
 		flex-shrink: 0;
 	}
 
@@ -230,18 +230,43 @@
 		text-align: center;
 	}
 
+	.stat-card:nth-child(1) {
+		background: linear-gradient(135deg, #FFE6F0 0%, #FFF4E6 100%);
+		border-color: var(--color-primary);
+	}
+
+	.stat-card:nth-child(2) {
+		background: linear-gradient(135deg, #E6F7FF 0%, #F0E6FF 100%);
+		border-color: var(--color-secondary);
+	}
+
+	.stat-card:nth-child(3) {
+		background: linear-gradient(135deg, #FFF9E6 0%, #E6FFF0 100%);
+		border-color: var(--color-accent);
+	}
+
+	.stat-card:nth-child(4) {
+		background: linear-gradient(135deg, #E6FFF0 0%, #FFE6F0 100%);
+		border-color: var(--color-tertiary);
+	}
+
 	.stat-value {
 		font-size: 2.5rem;
 		font-weight: 900;
 		margin-bottom: var(--space-xs);
-		color: var(--color-primary);
 	}
+
+	.stat-card:nth-child(1) .stat-value { color: var(--color-primary); }
+	.stat-card:nth-child(2) .stat-value { color: var(--color-secondary); }
+	.stat-card:nth-child(3) .stat-value { color: var(--color-accent); }
+	.stat-card:nth-child(4) .stat-value { color: var(--color-tertiary); }
 
 	.stat-label {
 		font-size: 0.875rem;
 		color: var(--color-text-secondary);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
+		font-weight: 700;
 	}
 
 	.skills-section {
@@ -282,30 +307,41 @@
 	}
 
 	.skill-bar {
-		height: 12px;
-		background: var(--color-bg-tertiary);
-		border-radius: var(--radius-sm);
+		height: 16px;
+		background: var(--color-white);
+		border-radius: var(--radius-full);
 		overflow: hidden;
 		margin-bottom: var(--space-sm);
-		border: var(--border-thin) solid var(--color-border);
+		border: var(--border-medium) solid var(--color-border-secondary);
+		box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
 	}
 
 	.skill-progress {
 		height: 100%;
-		background: var(--color-primary);
-		border-radius: 0;
+		background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+		border-radius: var(--radius-full);
 		transition: width var(--transition-slow);
 		position: relative;
+		box-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+	}
+
+	.skill-card:nth-child(even) .skill-progress {
+		background: linear-gradient(90deg, var(--color-tertiary), var(--color-quaternary));
+		box-shadow: 0 0 10px rgba(131, 56, 236, 0.5);
 	}
 
 	.skill-progress::after {
 		content: '';
 		position: absolute;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		width: 4px;
-		background: var(--color-secondary);
+		right: -5px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 10px;
+		height: 10px;
+		background: var(--color-accent);
+		border-radius: 50%;
+		border: 2px solid var(--color-white);
+		box-shadow: 0 0 8px var(--color-accent);
 	}
 
 	.skill-level {
@@ -348,10 +384,21 @@
 		top: var(--space-xl);
 		width: 24px;
 		height: 24px;
-		background: var(--color-secondary);
-		border-radius: var(--radius-sm);
+		border-radius: 50%;
 		border: var(--border-medium) solid var(--color-border);
 		box-shadow: 0 0 0 4px var(--color-surface);
+	}
+
+	.timeline-item:nth-child(1) .timeline-marker {
+		background: var(--color-primary);
+	}
+
+	.timeline-item:nth-child(2) .timeline-marker {
+		background: var(--color-secondary);
+	}
+
+	.timeline-item:nth-child(3) .timeline-marker {
+		background: var(--color-accent);
 	}
 
 	.timeline-content h3 {

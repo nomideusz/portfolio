@@ -400,22 +400,26 @@
 
 	.contact-method:nth-child(1) {
 		border-color: var(--color-primary);
-		background: linear-gradient(135deg, #FFF 0%, #FFE6F0 100%);
+		background: var(--color-white);
+		border-left: var(--border-extra-thick) solid var(--color-primary);
 	}
 
 	.contact-method:nth-child(2) {
 		border-color: var(--color-secondary);
-		background: linear-gradient(135deg, #FFF 0%, #E6F7FF 100%);
+		background: var(--color-white);
+		border-left: var(--border-extra-thick) solid var(--color-secondary);
 	}
 
 	.contact-method:nth-child(3) {
 		border-color: var(--color-accent);
-		background: linear-gradient(135deg, #FFF 0%, #FFF9E6 100%);
+		background: var(--color-white);
+		border-left: var(--border-extra-thick) solid var(--color-accent);
 	}
 
 	.contact-method:nth-child(4) {
 		border-color: var(--color-tertiary);
-		background: linear-gradient(135deg, #FFF 0%, #F0E6FF 100%);
+		background: var(--color-white);
+		border-left: var(--border-extra-thick) solid var(--color-tertiary);
 	}
 
 	.contact-method:hover {
@@ -461,13 +465,15 @@
 	}
 
 	.availability-card {
-		background: linear-gradient(135deg, #E6FFF0 0%, #E6F7FF 100%);
+		background: var(--color-white);
 		border-color: var(--color-quaternary);
+		border-left: var(--border-extra-thick) solid var(--color-quaternary);
 	}
 
 	.response-card {
-		background: linear-gradient(135deg, #FFF9E6 0%, #FFE6F0 100%);
+		background: var(--color-white);
 		border-color: var(--color-orange);
+		border-left: var(--border-extra-thick) solid var(--color-orange);
 	}
 
 	.availability-icon,

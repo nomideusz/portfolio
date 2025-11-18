@@ -231,23 +231,27 @@
 	}
 
 	.stat-card:nth-child(1) {
-		background: linear-gradient(135deg, #FFE6F0 0%, #FFF4E6 100%);
+		background: var(--color-white);
 		border-color: var(--color-primary);
+		border-top: var(--border-extra-thick) solid var(--color-primary);
 	}
 
 	.stat-card:nth-child(2) {
-		background: linear-gradient(135deg, #E6F7FF 0%, #F0E6FF 100%);
+		background: var(--color-white);
 		border-color: var(--color-secondary);
+		border-top: var(--border-extra-thick) solid var(--color-secondary);
 	}
 
 	.stat-card:nth-child(3) {
-		background: linear-gradient(135deg, #FFF9E6 0%, #E6FFF0 100%);
+		background: var(--color-white);
 		border-color: var(--color-accent);
+		border-top: var(--border-extra-thick) solid var(--color-accent);
 	}
 
 	.stat-card:nth-child(4) {
-		background: linear-gradient(135deg, #E6FFF0 0%, #FFE6F0 100%);
+		background: var(--color-white);
 		border-color: var(--color-tertiary);
+		border-top: var(--border-extra-thick) solid var(--color-tertiary);
 	}
 
 	.stat-value {

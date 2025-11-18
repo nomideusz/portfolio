@@ -224,33 +224,39 @@
 	}
 
 	.project-card:nth-child(6n+1) {
-		background: linear-gradient(135deg, #FFF4E6 0%, #FFE6F0 100%);
+		background: var(--color-white);
 		border-color: var(--color-primary);
+		border-left: var(--border-extra-thick) solid var(--color-primary);
 	}
 
 	.project-card:nth-child(6n+2) {
-		background: linear-gradient(135deg, #E6F7FF 0%, #F0E6FF 100%);
+		background: var(--color-white);
 		border-color: var(--color-secondary);
+		border-left: var(--border-extra-thick) solid var(--color-secondary);
 	}
 
 	.project-card:nth-child(6n+3) {
-		background: linear-gradient(135deg, #FFF9E6 0%, #E6FFF0 100%);
+		background: var(--color-white);
 		border-color: var(--color-accent);
+		border-left: var(--border-extra-thick) solid var(--color-accent);
 	}
 
 	.project-card:nth-child(6n+4) {
-		background: linear-gradient(135deg, #F0E6FF 0%, #FFF4E6 100%);
+		background: var(--color-white);
 		border-color: var(--color-tertiary);
+		border-left: var(--border-extra-thick) solid var(--color-tertiary);
 	}
 
 	.project-card:nth-child(6n+5) {
-		background: linear-gradient(135deg, #E6FFF0 0%, #E6F7FF 100%);
+		background: var(--color-white);
 		border-color: var(--color-quaternary);
+		border-left: var(--border-extra-thick) solid var(--color-quaternary);
 	}
 
 	.project-card:nth-child(6n+6) {
-		background: linear-gradient(135deg, #FFE6F0 0%, #FFF9E6 100%);
+		background: var(--color-white);
 		border-color: var(--color-orange);
+		border-left: var(--border-extra-thick) solid var(--color-orange);
 	}
 
 	.project-card.featured::before {

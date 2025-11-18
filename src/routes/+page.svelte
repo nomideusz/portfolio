@@ -282,7 +282,7 @@
 		animation: float 6s ease-in-out infinite;
 		border: var(--border-thick) solid var(--color-accent);
 		box-shadow: 6px 6px 0 var(--color-tertiary);
-		background: linear-gradient(135deg, #FFF9E6 0%, #FFE6F0 100%);
+		background: var(--color-white);
 	}
 
 	.card-2 {
@@ -291,7 +291,7 @@
 		animation: float 7s ease-in-out infinite 1s;
 		border: var(--border-thick) solid var(--color-secondary);
 		box-shadow: 6px 6px 0 var(--color-primary);
-		background: linear-gradient(135deg, #E6F7FF 0%, #F0E6FF 100%);
+		background: var(--color-white);
 	}
 
 	.card-3 {
@@ -300,7 +300,7 @@
 		animation: float 8s ease-in-out infinite 2s;
 		border: var(--border-thick) solid var(--color-quaternary);
 		box-shadow: 6px 6px 0 var(--color-orange);
-		background: linear-gradient(135deg, #E6FFF0 0%, #FFF4E6 100%);
+		background: var(--color-white);
 	}
 
 	.code-snippet {
@@ -365,10 +365,11 @@
 		text-align: center;
 		padding: var(--space-xl);
 		cursor: pointer;
-		background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
+		background: var(--color-white);
 		border: var(--border-medium) solid;
 		border-radius: var(--radius-lg);
 		position: relative;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 	}
 
 	.tech-card:nth-child(1) { border-color: var(--color-primary); }
@@ -419,18 +420,21 @@
 	}
 
 	.feature-card:nth-child(1) {
-		background: linear-gradient(135deg, #FFF4E6 0%, #FFE6F0 100%);
+		background: var(--color-white);
 		border-color: var(--color-primary);
+		border-left: var(--border-extra-thick) solid var(--color-primary);
 	}
 
 	.feature-card:nth-child(2) {
-		background: linear-gradient(135deg, #E6F7FF 0%, #F0E6FF 100%);
+		background: var(--color-white);
 		border-color: var(--color-secondary);
+		border-left: var(--border-extra-thick) solid var(--color-secondary);
 	}
 
 	.feature-card:nth-child(3) {
-		background: linear-gradient(135deg, #FFF9E6 0%, #E6FFF0 100%);
+		background: var(--color-white);
 		border-color: var(--color-accent);
+		border-left: var(--border-extra-thick) solid var(--color-accent);
 	}
 
 	.feature-icon {

@@ -273,18 +273,18 @@
 
 	.featured-badge {
 		position: absolute;
-		top: var(--space-lg);
+		top: -15px;
 		right: var(--space-lg);
-		padding: var(--space-xs) var(--space-md);
+		padding: var(--space-xs) var(--space-lg);
 		background: var(--color-accent);
 		color: var(--color-black);
-		font-size: 0.75rem;
+		font-size: 0.875rem;
 		font-weight: 900;
-		border-radius: var(--radius-full);
+		border-radius: var(--radius-md);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		border: var(--border-medium) solid var(--color-primary);
-		box-shadow: 3px 3px 0 var(--color-secondary);
+		box-shadow: 4px 4px 0 var(--color-secondary), 8px 8px 0 var(--color-tertiary);
 		z-index: 10;
 	}
 
@@ -293,10 +293,6 @@
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: var(--space-lg);
-	}
-
-	.project-card.featured .project-header {
-		margin-top: var(--space-xl);
 	}
 
 	.project-number {

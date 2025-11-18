@@ -271,6 +271,7 @@ a:hover {
 
 .btn-primary:hover {
 	background: var(--color-orange);
+	color: var(--color-white);
 	border-color: var(--color-accent);
 	transform: translate(-4px, -4px);
 	box-shadow: var(--shadow-xl);
@@ -289,6 +290,7 @@ a:hover {
 
 .btn-secondary:hover {
 	background: var(--color-quaternary);
+	color: var(--color-black);
 	border-color: var(--color-primary);
 	transform: translate(-4px, -4px);
 	box-shadow: var(--shadow-md);

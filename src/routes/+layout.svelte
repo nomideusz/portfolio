@@ -4,11 +4,20 @@
 
 	let { children } = $props();
 	let scrolled = $state(false);
+	let mobileMenuOpen = $state(false);
 
 	if (typeof window !== 'undefined') {
 		window.addEventListener('scroll', () => {
 			scrolled = window.scrollY > 50;
 		});
+	}
+
+	function toggleMobileMenu() {
+		mobileMenuOpen = !mobileMenuOpen;
+	}
+
+	function closeMobileMenu() {
+		mobileMenuOpen = false;
 	}
 </script>
 
@@ -21,14 +30,19 @@
 <div class="app">
 	<header class:scrolled>
 		<nav class="container">
-			<a href="/" class="logo">
+			<a href="/" class="logo" onclick={closeMobileMenu}>
 				<span class="gradient-text">Portfolio</span>
 			</a>
-			<ul class="nav-links">
-				<li><a href="/">Home</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/projects">Projects</a></li>
-				<li><a href="/contact" class="btn btn-primary">Contact</a></li>
+
+			<button class="mobile-menu-toggle" onclick={toggleMobileMenu} aria-label="Toggle mobile menu">
+				<span class="hamburger" class:open={mobileMenuOpen}></span>
+			</button>
+
+			<ul class="nav-links" class:mobile-open={mobileMenuOpen}>
+				<li><a href="/" onclick={closeMobileMenu}>Home</a></li>
+				<li><a href="/about" onclick={closeMobileMenu}>About</a></li>
+				<li><a href="/projects" onclick={closeMobileMenu}>Projects</a></li>
+				<li><a href="/contact" class="btn btn-primary" onclick={closeMobileMenu}>Contact</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -109,6 +123,56 @@
 
 	.logo:hover {
 		transform: scale(1.05);
+	}
+
+	.mobile-menu-toggle {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: var(--space-xs);
+		z-index: 1001;
+	}
+
+	.hamburger {
+		display: block;
+		width: 28px;
+		height: 2px;
+		background: var(--color-text);
+		position: relative;
+		transition: all var(--transition-base);
+	}
+
+	.hamburger::before,
+	.hamburger::after {
+		content: '';
+		position: absolute;
+		width: 28px;
+		height: 2px;
+		background: var(--color-text);
+		transition: all var(--transition-base);
+	}
+
+	.hamburger::before {
+		top: -8px;
+	}
+
+	.hamburger::after {
+		bottom: -8px;
+	}
+
+	.hamburger.open {
+		background: transparent;
+	}
+
+	.hamburger.open::before {
+		top: 0;
+		transform: rotate(45deg);
+	}
+
+	.hamburger.open::after {
+		bottom: 0;
+		transform: rotate(-45deg);
 	}
 
 	.nav-links {
@@ -217,13 +281,57 @@
 	}
 
 	@media (max-width: 768px) {
+		.mobile-menu-toggle {
+			display: block;
+		}
+
 		.nav-links {
-			gap: var(--space-md);
+			position: fixed;
+			top: 0;
+			right: -100%;
+			width: 280px;
+			height: 100vh;
+			background: var(--color-bg);
+			border-left: var(--border-thick) solid var(--color-border);
+			box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: var(--space-xl);
+			padding: var(--space-3xl) var(--space-lg);
+			transition: right var(--transition-slow);
+			z-index: 1000;
+		}
+
+		.nav-links.mobile-open {
+			right: 0;
+		}
+
+		.nav-links li {
+			width: 100%;
+			text-align: center;
+		}
+
+		.nav-links a {
+			display: block;
+			font-size: 1.25rem;
+			padding: var(--space-md);
 		}
 
 		.nav-links a.btn {
-			padding: var(--space-xs) var(--space-md);
-			font-size: 0.875rem;
+			width: 100%;
+			padding: var(--space-md) var(--space-lg);
+			font-size: 1rem;
+		}
+
+		.nav-links a:not(.btn)::after {
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.nav-links a:not(.btn):hover::after {
+			width: 80%;
 		}
 
 		.footer-content {
@@ -233,6 +341,17 @@
 
 		.footer-links {
 			gap: var(--space-xl);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.nav-links {
+			width: 100%;
+			right: -100%;
+		}
+
+		.logo {
+			font-size: 1.25rem;
 		}
 	}
 </style>

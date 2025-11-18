@@ -408,12 +408,37 @@
 	}
 
 	@media (max-width: 768px) {
+		.bio-section {
+			padding: var(--space-lg);
+		}
+
+		.bio-section p {
+			font-size: 1rem;
+		}
+
+		.profile-image-small {
+			width: 80px;
+			height: 80px;
+		}
+
+		.section-icon {
+			font-size: 2rem;
+		}
+
 		.skills-grid {
 			grid-template-columns: 1fr;
 		}
 
 		.stats-grid {
 			grid-template-columns: 1fr;
+		}
+
+		.stat-card {
+			padding: var(--space-md);
+		}
+
+		.stat-value {
+			font-size: 2rem;
 		}
 
 		.timeline::before {
@@ -425,7 +450,68 @@
 		}
 
 		.timeline-item {
+			padding: var(--space-lg);
 			padding-left: var(--space-xl);
+		}
+
+		.cta-card {
+			padding: var(--space-xl);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.bio-section {
+			padding: var(--space-md);
+		}
+
+		.profile-header {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: var(--space-md);
+		}
+
+		.profile-image-small {
+			width: 100px;
+			height: 100px;
+		}
+
+		.stats-grid {
+			gap: var(--space-sm);
+		}
+
+		.stat-value {
+			font-size: 1.75rem;
+		}
+
+		.skill-card {
+			padding: var(--space-md);
+		}
+
+		.timeline-item {
+			padding: var(--space-md);
+			padding-left: var(--space-lg);
+		}
+
+		.timeline::before {
+			left: 8px;
+		}
+
+		.timeline-marker {
+			left: 0;
+			width: 20px;
+			height: 20px;
+		}
+
+		.cta-card {
+			padding: var(--space-lg);
+		}
+
+		.cta-card h2 {
+			font-size: 1.5rem;
+		}
+
+		.cta-card p {
+			font-size: 1rem;
 		}
 	}
 </style>

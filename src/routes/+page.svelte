@@ -404,13 +404,73 @@
 			padding: var(--space-2xl) 0;
 		}
 
+		.badge {
+			font-size: 0.75rem;
+			padding: var(--space-xs) var(--space-sm);
+		}
+
 		.tech-grid {
 			grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 			gap: var(--space-md);
 		}
 
+		.tech-card {
+			padding: var(--space-md);
+		}
+
+		.tech-icon {
+			font-size: 2.5rem;
+		}
+
 		.features-grid {
 			grid-template-columns: 1fr;
+			gap: var(--space-lg);
+		}
+
+		.feature-card {
+			padding: var(--space-lg);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero {
+			padding: var(--space-xl) 0;
+		}
+
+		.hero::before {
+			width: 100px;
+			height: 100px;
+		}
+
+		.cta {
+			flex-direction: column;
+			width: 100%;
+		}
+
+		.cta .btn {
+			width: 100%;
+		}
+
+		.tech-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--space-sm);
+		}
+
+		.tech-card {
+			padding: var(--space-sm);
+		}
+
+		.tech-icon {
+			font-size: 2rem;
+			margin-bottom: var(--space-xs);
+		}
+
+		.tech-name {
+			font-size: 0.875rem;
+		}
+
+		.feature-icon {
+			font-size: 2.5rem;
 		}
 	}
 </style>

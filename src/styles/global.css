@@ -157,8 +157,26 @@ a:hover {
 	padding: 0 var(--space-lg);
 }
 
+@media (max-width: 768px) {
+	.container {
+		padding: 0 var(--space-md);
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 0 var(--space-sm);
+	}
+}
+
 .section {
 	padding: var(--space-3xl) 0;
+}
+
+@media (max-width: 768px) {
+	.section {
+		padding: var(--space-2xl) 0;
+	}
 }
 
 /* Accent text replaces gradient-text - solid color, bold styling */
@@ -222,6 +240,15 @@ a:hover {
 	color: var(--color-black);
 	transform: translate(-2px, -2px);
 	box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 480px) {
+	.btn {
+		padding: var(--space-xs) var(--space-md);
+		font-size: 0.875rem;
+		width: 100%;
+		justify-content: center;
+	}
 }
 
 /* Animations */

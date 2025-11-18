@@ -469,6 +469,19 @@
 
 		.info-section {
 			order: -1;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		.contact-info {
+			flex: 1;
+			min-width: 300px;
+		}
+
+		.availability-card,
+		.response-card {
+			flex: 1;
+			min-width: 200px;
 		}
 	}
 
@@ -479,6 +492,79 @@
 
 		.form-section {
 			padding: var(--space-lg);
+		}
+
+		.info-section {
+			flex-direction: column;
+		}
+
+		.contact-info,
+		.availability-card,
+		.response-card {
+			min-width: unset;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.page-header {
+			margin-bottom: var(--space-xl);
+		}
+
+		.subtitle {
+			font-size: 1rem;
+		}
+
+		.form-section {
+			padding: var(--space-md);
+		}
+
+		.success-icon {
+			width: 60px;
+			height: 60px;
+			font-size: 2rem;
+		}
+
+		.success-message h3 {
+			font-size: 1.5rem;
+		}
+
+		.success-message p {
+			font-size: 1rem;
+		}
+
+		.contact-info {
+			padding: var(--space-md);
+		}
+
+		.contact-info h3 {
+			font-size: 1.25rem;
+		}
+
+		.contact-method {
+			padding: var(--space-sm);
+			gap: var(--space-sm);
+		}
+
+		.method-icon {
+			font-size: 1.5rem;
+		}
+
+		.method-title {
+			font-size: 0.875rem;
+		}
+
+		.method-value {
+			font-size: 0.8rem;
+		}
+
+		.availability-card,
+		.response-card {
+			padding: var(--space-md);
+		}
+
+		.availability-icon,
+		.response-icon {
+			font-size: 2rem;
 		}
 	}
 </style>

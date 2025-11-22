@@ -11,6 +11,14 @@
 
 	let projects = $state<Project[]>([
 		{
+			title: 'Rzeczywiscie',
+			description: 'Real-time collaboration platform featuring a shared drawing board, Kanban board, live world map, and real estate scraper. Built with Phoenix LiveView and Svelte 5 for instant synchronization.',
+			tech: ['Phoenix LiveView', 'Svelte 5', 'LiveSvelte', 'Real-time'],
+			link: 'https://rzeczywiscie.zaur.app',
+			category: 'Full-Stack',
+			featured: true
+		},
+		{
 			title: 'Zaur',
 			description: 'QR-based booking platform for independent tour guides. Features PWA capabilities, Stripe payments, Google Maps integration, and weather information to streamline the booking experience.',
 			tech: ['SvelteKit', 'Stripe API', 'Google Maps', 'OpenWeather API', 'PWA'],

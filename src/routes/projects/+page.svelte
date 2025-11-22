@@ -1,69 +1,5 @@
 <script lang="ts">
-	// Using Svelte 5 runes
-	interface Project {
-		title: string;
-		description: string;
-		tech: string[];
-		link?: string;
-		category: string;
-		featured?: boolean;
-	}
-
-	let projects = $state<Project[]>([
-		{
-			title: 'Rzeczywiscie',
-			description: 'Real-time collaboration platform featuring a shared drawing board, Kanban board, live world map, and real estate scraper. Built with Phoenix LiveView and Svelte 5 for instant synchronization.',
-			tech: ['Phoenix LiveView', 'Svelte 5', 'LiveSvelte', 'Real-time'],
-			link: 'https://rzeczywiscie.zaur.app',
-			category: 'Full-Stack',
-			featured: true
-		},
-		{
-			title: 'Zaur',
-			description: 'QR-based booking platform for independent tour guides. Features PWA capabilities, Stripe payments, Google Maps integration, and weather information to streamline the booking experience.',
-			tech: ['SvelteKit', 'Stripe API', 'Google Maps', 'OpenWeather API', 'PWA'],
-			link: 'https://zaur.app',
-			category: 'Full-Stack',
-			featured: true
-		},
-		{
-			title: 'Intertech Poland',
-			description: 'B2B platform for environmental monitoring and scientific measurement solutions. Exclusive distributor website featuring CRDS spectroscopy technology, AI-powered leak detection, and real-time data measurement.',
-			tech: ['SvelteKit', 'Netlify', 'Dark Mode', 'Blog Integration'],
-			link: 'https://intertechpoland.pl/',
-			category: 'Web Development',
-			featured: true
-		},
-		{
-			title: 'TUTITUTU',
-			description: 'Professional portfolio website for an established interior architecture firm. Features optimized image galleries, responsive design, and social media integration showcasing 25+ years of design expertise.',
-			tech: ['SvelteKit', 'WebP Optimization', 'Google Analytics', 'Responsive Design'],
-			link: 'https://tutitutu.pl/',
-			category: 'Web Development'
-		},
-		{
-			title: 'Wibroakustyka.ai',
-			description: 'Graal vibroacoustic chair showcase website. Immersive wellness product site featuring biofeedback integration, VR compatibility, and therapeutic applications with dark/light theme switching.',
-			tech: ['Astro', 'Google Analytics', 'Partytown', 'Theme Switching'],
-			link: 'https://wibroakustyka.ai/',
-			category: 'Web Development'
-		},
-		{
-			title: 'Kurcz.pl',
-			description: 'Health information website focused on muscle cramps (kurcze mięśniowe). Component-based SPA with modern loading states and error handling for optimal user experience.',
-			tech: ['Alpine.js', 'Tailwind CSS', 'PNPM', 'SPA'],
-			link: 'https://kurcz.pl',
-			category: 'Web Development'
-		},
-		{
-			title: 'Pikastro',
-			description: 'AI-powered interior design studio website. A modern platform showcasing design services, portfolio of 50+ projects, and AI-assisted design prototyping capabilities.',
-			tech: ['Web Development', 'UI/UX Design', 'AI Integration', 'Responsive Design'],
-			link: 'https://pikastro.eu',
-			category: 'Web Development',
-			featured: true
-		}
-	]);
+	import { projects } from '$lib/data/projects';
 
 	let selectedFilter = $state<string>('All');
 	const categories = ['All', 'Full-Stack', 'Web Development'];
@@ -142,19 +78,23 @@
 						{/each}
 					</div>
 
-					{#if project.link}
-						<div class="project-footer">
+					<div class="project-footer">
+						<a href="/projects/{project.slug}" class="project-link details-link">
+							<span>View Details</span>
+							<span class="arrow">→</span>
+						</a>
+						{#if project.link}
 							<a
 								href={project.link}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="project-link"
+								class="project-link external-link"
 							>
-								<span>View Project</span>
-								<span class="arrow">→</span>
+								<span>Visit Site</span>
+								<span class="icon">↗</span>
 							</a>
-						</div>
-					{/if}
+						{/if}
+					</div>
 				</article>
 			{/each}
 		</div>

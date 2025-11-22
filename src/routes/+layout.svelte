@@ -1,10 +1,15 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
 	import '../styles/global.css';
+	import { afterNavigate } from '$app/navigation';
 
 	let { children } = $props();
 	let scrolled = $state(false);
 	let mobileMenuOpen = $state(false);
+
+	afterNavigate(() => {
+		revealOnScroll();
+	});
 
 	if (typeof window !== 'undefined') {
 		window.addEventListener('scroll', () => {

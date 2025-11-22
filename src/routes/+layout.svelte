@@ -2,10 +2,41 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import '../styles/global.css';
 	import { afterNavigate } from '$app/navigation';
+	import { onMount } from 'svelte';
 
 	let { children } = $props();
 	let scrolled = $state(false);
-	let mobileMenuOpen = $state(false);
+	let mobileMenuOpen =	$state(false);
+	let theme = $state('light');
+
+	onMount(() => {
+		// Check for saved theme preference or system preference
+		const savedTheme = localStorage.getItem('theme');
+		const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+		if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+			theme = 'dark';
+			document.documentElement.classList.add('dark');
+		} else {
+			theme = 'light';
+			document.documentElement.classList.remove('dark');
+			document.documentElement.classList.add('light');
+		}
+	});
+
+	function toggleTheme() {
+		if (theme === 'light') {
+			theme = 'dark';
+			document.documentElement.classList.add('dark');
+			document.documentElement.classList.remove('light');
+			localStorage.setItem('theme', 'dark');
+		} else {
+			theme = 'light';
+			document.documentElement.classList.remove('dark');
+			document.documentElement.classList.add('light');
+			localStorage.setItem('theme', 'light');
+		}
+	}
 
 	afterNavigate(() => {
 		revealOnScroll();
@@ -57,6 +88,20 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 	<title>Bartosz Dymet - Full-Stack Web Developer</title>
+	<script>
+		// Prevent flash of wrong theme
+		(function() {
+			try {
+				var localTheme = localStorage.getItem('theme');
+				var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				if (localTheme === 'dark' || (!localTheme && supportDarkMode)) {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.add('light');
+				}
+			} catch (e) {}
+		})();
+	</script>
 </svelte:head>
 
 <div class="app">
@@ -75,6 +120,15 @@
 				<li><a href="/about" onclick={closeMobileMenu}>About</a></li>
 				<li><a href="/projects" onclick={closeMobileMenu}>Projects</a></li>
 				<li><a href="/contact" class="btn btn-primary" onclick={closeMobileMenu}>Contact</a></li>
+				<li class="theme-toggle-li">
+					<button class="theme-toggle" onclick={toggleTheme} aria-label="Toggle theme">
+						{#if theme === 'light'}
+							🌙
+						{:else}
+							☀️
+						{/if}
+					</button>
+				</li>
 			</ul>
 		</nav>
 	</header>
@@ -100,6 +154,7 @@
 				<div class="link-group">
 					<h4>Connect</h4>
 					<a href="https://github.com/nomideusz" target="_blank" rel="noopener noreferrer">GitHub</a>
+					<a href="https://www.instagram.com/rietarius" target="_blank" rel="noopener noreferrer">Instagram</a>
 					<a href="mailto:b.dymet@gmail.com">Email</a>
 					<a href="tel:+48602846912">Phone</a>
 				</div>
@@ -279,6 +334,42 @@
 		width: 100%;
 	}
 
+	.theme-toggle-li {
+		margin-left: var(--space-sm);
+	}
+
+	.theme-toggle {
+		background: transparent;
+		border: 2px solid var(--color-border);
+		cursor: pointer;
+		font-size: 1.25rem;
+		padding: var(--space-xs);
+		border-radius: var(--radius-full);
+		transition: all var(--transition-fast);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 38px;
+		height: 38px;
+	}
+
+	.theme-toggle:hover {
+		transform: scale(1.15) rotate(15deg);
+		background: var(--color-accent);
+		border-color: var(--color-accent);
+		box-shadow: 0 0 12px var(--color-accent);
+	}
+
+	:global(.dark) .theme-toggle {
+		border-color: var(--color-secondary);
+	}
+
+	:global(.dark) .theme-toggle:hover {
+		background: var(--color-secondary);
+		border-color: var(--color-secondary);
+		box-shadow: 0 0 12px var(--color-secondary);
+	}
+
 	main {
 		flex: 1;
 		width: 100%;
@@ -428,6 +519,16 @@
 
 		.nav-links a:not(.btn):hover::after {
 			width: 80%;
+		}
+
+		.theme-toggle-li {
+			margin-left: 0;
+		}
+
+		.theme-toggle {
+			width: 48px;
+			height: 48px;
+			font-size: 1.5rem;
 		}
 
 		.footer-content {

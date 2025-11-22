@@ -70,7 +70,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
+	:root:not(.light) {
 		/* Backgrounds - Keep them vibrant even in dark mode! */
 		--color-bg: #1A0A2E;             /* Deep purple */
 		--color-bg-secondary: #16213E;   /* Dark blue */
@@ -94,6 +94,31 @@
 		--shadow-xl: 6px 6px 0 #FF006E, 12px 12px 0 #00F5FF, 18px 18px 0 #FFBE0B;
 		--shadow-brutal: 5px 5px 0 var(--color-secondary), 10px 10px 0 var(--color-accent);
 	}
+}
+
+:root.dark {
+	/* Backgrounds - Keep them vibrant even in dark mode! */
+	--color-bg: #1A0A2E;             /* Deep purple */
+	--color-bg-secondary: #16213E;   /* Dark blue */
+	--color-bg-tertiary: #0F3460;    /* Navy */
+	--color-surface: #1F1235;
+
+	/* Text Colors */
+	--color-text: #FFFFFF;
+	--color-text-secondary: #E8E8E8;
+	--color-text-tertiary: #B8B8B8;
+
+	/* Keep vibrant borders in dark mode */
+	--color-border: #FF006E;
+	--color-border-secondary: #00F5FF;
+	--color-border-tertiary: #FFBE0B;
+
+	/* Maximalist Shadows - Even more vibrant in dark mode */
+	--shadow-sm: 3px 3px 0 #FF006E, 6px 6px 0 #00F5FF;
+	--shadow-md: 4px 4px 0 #FFBE0B, 8px 8px 0 #8338EC;
+	--shadow-lg: 5px 5px 0 #06FFA5, 10px 10px 0 #FF5400;
+	--shadow-xl: 6px 6px 0 #FF006E, 12px 12px 0 #00F5FF, 18px 18px 0 #FFBE0B;
+	--shadow-brutal: 5px 5px 0 var(--color-secondary), 10px 10px 0 var(--color-accent);
 }
 
 * {

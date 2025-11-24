@@ -12,13 +12,14 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+	// 1. kruk.live
 	{
-		slug: 'rzeczywiscie',
-		title: 'Rzeczywiscie',
+		slug: 'kruk-live',
+		title: 'kruk.live',
 		description: 'Real-time collaboration platform featuring a shared drawing board, Kanban board, live world map, and real estate scraper. Built with Phoenix LiveView and Svelte 5 for instant synchronization.',
-		longDescription: 'Rzeczywiscie is a cutting-edge real-time collaboration platform designed to bridge the gap between remote teams. It integrates multiple productivity tools into a single, cohesive interface. The platform leverages the power of Phoenix LiveView for backend-driven real-time updates, ensuring that every stroke on the drawing board or card movement on the Kanban board is instantly reflected across all connected clients. The addition of Svelte 5 on the frontend provides a highly responsive and interactive user experience.',
+		longDescription: 'kruk.live is a cutting-edge real-time collaboration platform designed to bridge the gap between remote teams. It integrates multiple productivity tools into a single, cohesive interface. The platform leverages the power of Phoenix LiveView for backend-driven real-time updates, ensuring that every stroke on the drawing board or card movement on the Kanban board is instantly reflected across all connected clients. The addition of Svelte 5 on the frontend provides a highly responsive and interactive user experience.',
 		tech: ['Phoenix LiveView', 'Svelte 5', 'LiveSvelte', 'Real-time', 'Elixir', 'Tailwind CSS'],
-		link: 'https://rzeczywiscie.zaur.app',
+		link: 'https://kruk.live',
 		category: 'Full-Stack',
 		featured: true,
 		features: [
@@ -35,6 +36,7 @@ export const projects: Project[] = [
 			'Optimizing the real estate scraper to handle large datasets without blocking the application.'
 		]
 	},
+	// 2. zaur
 	{
 		slug: 'zaur',
 		title: 'Zaur',
@@ -58,94 +60,7 @@ export const projects: Project[] = [
 			'Integrating multiple third-party APIs (Maps, Weather, Stripe) while maintaining fast load times.'
 		]
 	},
-	{
-		slug: 'intertech-poland',
-		title: 'Intertech Poland',
-		description: 'Exclusive distributor website for Picarro and UGT. B2B platform for environmental monitoring, CRDS spectroscopy, and scientific measurement solutions.',
-		longDescription: 'Intertech Poland is a professional B2B platform designed for a leading distributor of scientific measurement solutions. The website serves as a digital catalog and informational hub for high-tech equipment like CRDS spectroscopy, AI-powered leak detection systems, and UGT lysimeters. It is built to convey trust and technical expertise, featuring a clean, corporate design with a blog for industry news and product updates.',
-		tech: ['SvelteKit', 'Netlify', 'Dark Mode', 'Blog Integration', 'Markdown', 'Tailwind CSS'],
-		link: 'https://intertechpoland.pl/',
-		category: 'Web Development',
-		featured: true,
-		features: [
-			'Product Catalog: Detailed showcase of scientific equipment (Picarro, UGT).',
-			'Specialized Solutions: Sections for emissions measurement, leak detection, and pipe replacement.',
-			'Blog Integration: Content management system for industry news and articles.',
-			'Dark/Light Mode: User preference support for better readability.',
-			'Responsive Design: Optimized for viewing on desktops, tablets, and mobiles.'
-		],
-		challenges: [
-			'Presenting complex technical specifications in an accessible and readable format.',
-			'Implementing a performant dark mode that respects system preferences.',
-			'Optimizing high-resolution product images for fast loading.',
-			'Structuring the content to appeal to a specialized B2B audience.'
-		]
-	},
-	{
-		slug: 'tutitutu',
-		title: 'TUTITUTU',
-		description: 'Professional portfolio website for an established interior architecture firm. Showcasing 25+ years of design expertise with a focus on revitalization and modern aesthetics.',
-		longDescription: 'TUTITUTU is a visual-first portfolio website for a prestigious interior architecture firm established in 1997. The site is designed to let the work speak for itself, featuring large, high-quality image galleries and a minimalist UI. It showcases over 25 years of design expertise, including designs for villas, residences, offices, and public spaces, as well as the revitalization of old interiors.',
-		tech: ['SvelteKit', 'WebP Optimization', 'Google Analytics', 'Responsive Design', 'CSS Grid'],
-		link: 'https://tutitutu.pl/',
-		category: 'Web Development',
-		features: [
-			'High-Performance Gallery: Optimized image loading with WebP and lazy loading.',
-			'Minimalist Design: Distraction-free interface focusing on architectural photography.',
-			'Extensive Portfolio: Showcasing projects from over two decades of work.',
-			'Responsive Layout: Fluid adaptation to all screen sizes.',
-			'Bilingual Content: Support for international clients.'
-		],
-		challenges: [
-			'Optimizing a large number of high-resolution images without compromising visual quality.',
-			'Creating a layout that adapts gracefully to both portrait and landscape photography.',
-			'Ensuring the site remains fast and responsive despite the heavy media content.'
-		]
-	},
-	{
-		slug: 'wibroakustyka',
-		title: 'Wibroakustyka.ai',
-		description: 'Showcase website for the Graal vibroacoustic chair. Immersive wellness product site featuring biofeedback integration and therapeutic applications.',
-		longDescription: 'Wibroakustyka.ai is an immersive product showcase for the Graal vibroacoustic chair, often described as a "zero gravity" chair for audiophiles. The website is designed to reflect the futuristic and therapeutic nature of the product. It features a modern, sleek design with dark/light theme switching and detailed sections explaining the science behind vibroacoustic therapy, biofeedback integration, and VR compatibility.',
-		tech: ['Astro', 'Google Analytics', 'Partytown', 'Theme Switching', 'React', 'Tailwind CSS'],
-		link: 'https://wibroakustyka.ai/',
-		category: 'Web Development',
-		features: [
-			'Immersive Product Showcase: High-quality visuals and detailed feature breakdowns.',
-			'Event Coverage: Updates and videos from events like Audio Video Show.',
-			'Theme Switching: Dynamic light and dark modes to match the wellness aesthetic.',
-			'Performance Optimization: Fast loading times using Astro\'s island architecture.',
-			'Testimonials: Video reviews and feedback from users.'
-		],
-		challenges: [
-			'Balancing rich visual content with high performance requirements.',
-			'Explaining a niche wellness technology to a broader audience.',
-			'Implementing smooth theme transitions without flashing unstyled content.',
-			'Integrating third-party scripts (like Analytics) without impacting main thread performance.'
-		]
-	},
-	{
-		slug: 'kurcz',
-		title: 'Kurcz.pl',
-		description: 'Health information website focused on muscle cramps. Component-based SPA with modern loading states and error handling.',
-		longDescription: 'Kurcz.pl is a specialized health information resource dedicated to muscle cramps. It provides users with reliable medical information, prevention tips, and treatment options. Built as a Single Page Application (SPA), it offers a smooth, app-like browsing experience with instant page transitions and modern UI patterns for loading and error states.',
-		tech: ['Alpine.js', 'Tailwind CSS', 'PNPM', 'SPA', 'HTML5'],
-		link: 'https://kurcz.pl',
-		category: 'Web Development',
-		features: [
-			'SPA Architecture: Seamless navigation without full page reloads.',
-			'Modern UI/UX: Clean, readable typography and intuitive layout.',
-			'Error Handling: Graceful degradation and user-friendly error messages.',
-			'Fast Performance: Lightweight implementation using Alpine.js.',
-			'Mobile Optimized: Excellent reading experience on smartphones.'
-		],
-		challenges: [
-			'Creating a lightweight SPA without a heavy framework overhead.',
-			'Ensuring content is accessible and easy to read for all age groups.',
-			'Managing state effectively with Alpine.js for a multi-page feel.',
-			'Optimizing for Core Web Vitals to ensure good search engine ranking.'
-		]
-	},
+	// 3. pikastro
 	{
 		slug: 'pikastro',
 		title: 'Pikastro',
@@ -169,6 +84,98 @@ export const projects: Project[] = [
 			'Ensuring high performance with image-heavy content.'
 		]
 	},
+	// 4. kurcz.pl
+	{
+		slug: 'kurcz',
+		title: 'Kurcz.pl',
+		description: 'Health information website focused on muscle cramps. Component-based SPA with modern loading states and error handling.',
+		longDescription: 'Kurcz.pl is a specialized health information resource dedicated to muscle cramps. It provides users with reliable medical information, prevention tips, and treatment options. Built as a Single Page Application (SPA), it offers a smooth, app-like browsing experience with instant page transitions and modern UI patterns for loading and error states.',
+		tech: ['Alpine.js', 'Tailwind CSS', 'PNPM', 'SPA', 'HTML5'],
+		link: 'https://kurcz.pl',
+		category: 'Web Development',
+		features: [
+			'SPA Architecture: Seamless navigation without full page reloads.',
+			'Modern UI/UX: Clean, readable typography and intuitive layout.',
+			'Error Handling: Graceful degradation and user-friendly error messages.',
+			'Fast Performance: Lightweight implementation using Alpine.js.',
+			'Mobile Optimized: Excellent reading experience on smartphones.'
+		],
+		challenges: [
+			'Creating a lightweight SPA without a heavy framework overhead.',
+			'Ensuring content is accessible and easy to read for all age groups.',
+			'Managing state effectively with Alpine.js for a multi-page feel.',
+			'Optimizing for Core Web Vitals to ensure good search engine ranking.'
+		]
+	},
+	// 5. tutitutu
+	{
+		slug: 'tutitutu',
+		title: 'TUTITUTU',
+		description: 'Professional portfolio website for an established interior architecture firm. Showcasing 25+ years of design expertise with a focus on revitalization and modern aesthetics.',
+		longDescription: 'TUTITUTU is a visual-first portfolio website for a prestigious interior architecture firm established in 1997. The site is designed to let the work speak for itself, featuring large, high-quality image galleries and a minimalist UI. It showcases over 25 years of design expertise, including designs for villas, residences, offices, and public spaces, as well as the revitalization of old interiors.',
+		tech: ['SvelteKit', 'WebP Optimization', 'Google Analytics', 'Responsive Design', 'CSS Grid'],
+		link: 'https://tutitutu.pl/',
+		category: 'Web Development',
+		features: [
+			'High-Performance Gallery: Optimized image loading with WebP and lazy loading.',
+			'Minimalist Design: Distraction-free interface focusing on architectural photography.',
+			'Extensive Portfolio: Showcasing projects from over two decades of work.',
+			'Responsive Layout: Fluid adaptation to all screen sizes.',
+			'Bilingual Content: Support for international clients.'
+		],
+		challenges: [
+			'Optimizing a large number of high-resolution images without compromising visual quality.',
+			'Creating a layout that adapts gracefully to both portrait and landscape photography.',
+			'Ensuring the site remains fast and responsive despite the heavy media content.'
+		]
+	},
+	// 6. wibroakustyka.ai
+	{
+		slug: 'wibroakustyka',
+		title: 'Wibroakustyka.ai',
+		description: 'Showcase website for the Graal vibroacoustic chair. Immersive wellness product site featuring biofeedback integration and therapeutic applications.',
+		longDescription: 'Wibroakustyka.ai is an immersive product showcase for the Graal vibroacoustic chair, often described as a "zero gravity" chair for audiophiles. The website is designed to reflect the futuristic and therapeutic nature of the product. It features a modern, sleek design with dark/light theme switching and detailed sections explaining the science behind vibroacoustic therapy, biofeedback integration, and VR compatibility.',
+		tech: ['Astro', 'Google Analytics', 'Partytown', 'Theme Switching', 'React', 'Tailwind CSS'],
+		link: 'https://wibroakustyka.ai/',
+		category: 'Web Development',
+		features: [
+			'Immersive Product Showcase: High-quality visuals and detailed feature breakdowns.',
+			'Event Coverage: Updates and videos from events like Audio Video Show.',
+			'Theme Switching: Dynamic light and dark modes to match the wellness aesthetic.',
+			'Performance Optimization: Fast loading times using Astro\'s island architecture.',
+			'Testimonials: Video reviews and feedback from users.'
+		],
+		challenges: [
+			'Balancing rich visual content with high performance requirements.',
+			'Explaining a niche wellness technology to a broader audience.',
+			'Implementing smooth theme transitions without flashing unstyled content.',
+			'Integrating third-party scripts (like Analytics) without impacting main thread performance.'
+		]
+	},
+	// 7. Intertech Poland
+	{
+		slug: 'intertech-poland',
+		title: 'Intertech Poland',
+		description: 'Exclusive distributor website for Picarro and UGT. B2B platform for environmental monitoring, CRDS spectroscopy, and scientific measurement solutions.',
+		longDescription: 'Intertech Poland is a professional B2B platform designed for a leading distributor of scientific measurement solutions. The website serves as a digital catalog and informational hub for high-tech equipment like CRDS spectroscopy, AI-powered leak detection systems, and UGT lysimeters. It is built to convey trust and technical expertise, featuring a clean, corporate design with a blog for industry news and product updates.',
+		tech: ['SvelteKit', 'Netlify', 'Dark Mode', 'Blog Integration', 'Markdown', 'Tailwind CSS'],
+		link: 'https://intertechpoland.pl/',
+		category: 'Web Development',
+		features: [
+			'Product Catalog: Detailed showcase of scientific equipment (Picarro, UGT).',
+			'Specialized Solutions: Sections for emissions measurement, leak detection, and pipe replacement.',
+			'Blog Integration: Content management system for industry news and articles.',
+			'Dark/Light Mode: User preference support for better readability.',
+			'Responsive Design: Optimized for viewing on desktops, tablets, and mobiles.'
+		],
+		challenges: [
+			'Presenting complex technical specifications in an accessible and readable format.',
+			'Implementing a performant dark mode that respects system preferences.',
+			'Optimizing high-resolution product images for fast loading.',
+			'Structuring the content to appeal to a specialized B2B audience.'
+		]
+	},
+	// 8. kino.net.pl
 	{
 		slug: 'kino',
 		title: 'Kino.net.pl',

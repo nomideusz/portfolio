@@ -14,36 +14,36 @@
 
 	let skills = $state<Skill[]>([
 		{ name: 'SvelteKit/Svelte', icon: '⚡', level: 95 },
-		{ name: 'TypeScript', icon: '📘', level: 90 },
+		{ name: 'TypeScript', icon: '📘', level: 95 },
+		{ name: 'PostgreSQL', icon: '🗄️', level: 90 },
+		{ name: 'Node.js', icon: '🟢', level: 88 },
 		{ name: 'HTML5/CSS3', icon: '🎨', level: 95 },
-		{ name: 'SQL & Databases', icon: '🗄️', level: 85 },
+		{ name: 'Docker', icon: '🐳', level: 85 },
 		{ name: 'Linux & VPS', icon: '🐧', level: 88 },
-		{ name: 'Docker', icon: '🐳', level: 80 },
-		{ name: 'Git', icon: '📦', level: 90 },
-		{ name: 'Python', icon: '🐍', level: 75 }
+		{ name: 'Git', icon: '📦', level: 90 }
 	]);
 
 	let experiences = $state<Experience[]>([
 		{
-			title: 'Freelance Web Developer',
+			title: 'Freelance Full-Stack Web Developer',
 			period: '2007 - Present',
-			description: 'Design and develop modern web applications using SvelteKit, Svelte, and TypeScript. Create custom solutions including complete websites and content management systems. Optimize web applications for speed and performance, collaborating closely with clients to deliver tailored solutions.'
+			description: 'Architect and develop high-performance modern web applications using SvelteKit and TypeScript, ensuring strict type safety and code maintainability. Design and implement scalable database schemas using PostgreSQL. Implement advanced optimization strategies and deliver complete custom websites and Content Management Systems (CMS).'
 		},
 		{
-			title: 'Mobile Measuring Station Operator / Data Analyst',
+			title: 'Data Analyst / Mobile Measuring Station Operator',
 			period: '2022 - Present',
-			description: 'Intertech Poland / Picarro - Operate Picarro vehicle and equipment for gas measurements. Master the Picarro software suite and analytical tools for efficient data processing and analysis. Work with Polish Gas Company providing training support and operational guidance.'
+			description: 'Picarro - Operate specialized Picarro vehicle, ensuring high-quality data collection and processing. Utilize GIS software for data processing and analysis to support the Polish Gas Company (PSG). Provide training and operational guidance for clients.'
 		},
 		{
 			title: 'Surveyor & Team Lead',
 			period: '2007 - 2019',
-			description: 'Tesla Exploration / IMC Geophysical Services / Terrex Seismic - Led international surveyor teams in complex seismic projects across multiple countries. Managed advanced surveying equipment and processed survey data with high precision.'
+			description: 'Tesla Exploration / IMC Geophysical Services / Terrex Seismic - Led international surveyor teams in complex seismic projects across multiple countries. Managed advanced surveying equipment and executed data processing workflows.'
 		}
 	]);
 
 	let stats = $state([
-		{ label: 'Web Dev Experience', value: '15+ yrs' },
-		{ label: 'Projects Delivered', value: '50+' },
+		{ label: 'Web Dev Experience', value: '10+ yrs' },
+		{ label: 'Projects Delivered', value: '20+' },
 		{ label: 'Technologies', value: '20+' },
 		{ label: 'Client Satisfaction', value: '100%' }
 	]);
@@ -51,18 +51,18 @@
 
 <svelte:head>
 	<title>About - Bartosz Dymet | Full-Stack Web Developer</title>
-	<meta name="description" content="Learn about Bartosz Dymet, a full-stack web developer with 15+ years of experience. Expertise in SvelteKit, TypeScript, Docker, and modern web technologies." />
+	<meta name="description" content="Learn about Bartosz Dymet, a full-stack web developer with over 10 years of experience. Expertise in SvelteKit, TypeScript, PostgreSQL, and modern web technologies." />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="profile" />
 	<meta property="og:title" content="About Bartosz Dymet - Full-Stack Web Developer" />
-	<meta property="og:description" content="Full-stack developer with 15+ years of experience in modern web technologies, data analysis, and team leadership." />
+	<meta property="og:description" content="Full-stack developer with over 10 years of experience specializing in SvelteKit, TypeScript, and PostgreSQL database architecture." />
 	<meta property="og:image" content="/bartek.png" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:title" content="About Bartosz Dymet - Full-Stack Web Developer" />
-	<meta name="twitter:description" content="Full-stack developer with 15+ years of experience in modern web technologies." />
+	<meta name="twitter:description" content="Full-stack developer with over 10 years of experience in modern web technologies." />
 	<meta name="twitter:image" content="/bartek.png" />
 </svelte:head>
 
@@ -72,7 +72,7 @@
 			<h1>
 				<span class="gradient-text">About Me</span>
 			</h1>
-			<p class="subtitle">Full-stack developer with 15+ years of experience</p>
+			<p class="subtitle">Full-stack developer with over 10 years of experience</p>
 		</div>
 
 		<div class="content-grid">
@@ -85,18 +85,19 @@
 				</div>
 				<h2>About Bartosz</h2>
 				<p>
-					I'm an experienced web developer with over 15 years of freelance experience, specializing in modern web technologies.
-					I combine technical expertise with strong communication skills to deliver custom solutions that exceed client expectations.
+					I'm a full-stack web developer with over 10 years of experience, currently specializing in the SvelteKit and TypeScript ecosystem.
+					I have a strong background in building backend architectures using PostgreSQL and a proven track record of independent project delivery.
 				</p>
 				<p>
-					My expertise spans the full development stack—from designing and developing modern web applications with
-					SvelteKit and TypeScript to database management, Linux server administration, and Docker containerization.
-					I've created complete websites, custom content management systems, and performance-optimized applications for diverse clients.
+					My expertise spans modern web frameworks with a pragmatic approach to database management and AI/LLM concepts.
+					I architect and develop high-performance web applications using SvelteKit and TypeScript, ensuring strict type safety
+					and code maintainability. I design and implement scalable database schemas and deliver complete custom websites
+					and Content Management Systems.
 				</p>
 				<p>
-					Beyond web development, I bring 15+ years of experience in data analysis and technical operations, including
-					working with advanced software systems and leading international teams. I'm known for quick adaptation to new technologies,
-					strong problem-solving abilities, and delivering results that align with business objectives.
+					Beyond web development, I bring additional experience in data analysis and technical operations, including
+					working with specialized software systems and leading international teams. I'm known for my independent work style,
+					strong problem-solving abilities, and quick adaptation to new technologies.
 				</p>
 				<p>
 					I'm fluent in Polish and English, available to start immediately, and willing to travel for the right opportunity.

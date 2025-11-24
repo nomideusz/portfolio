@@ -5,29 +5,29 @@
 	const technologies = [
 		{ name: 'SvelteKit', icon: '⚡', color: '#FF3E00' },
 		{ name: 'TypeScript', icon: '📘', color: '#3178C6' },
-		{ name: 'HTML5/CSS3', icon: '🎨', color: '#E34F26' },
-		{ name: 'SQL', icon: '🗄️', color: '#4479A1' },
+		{ name: 'PostgreSQL', icon: '🗄️', color: '#4169E1' },
+		{ name: 'Node.js', icon: '🟢', color: '#339933' },
 		{ name: 'Docker', icon: '🐳', color: '#2496ED' },
 		{ name: 'Linux/VPS', icon: '🐧', color: '#FCC624' },
 		{ name: 'Git', icon: '📦', color: '#F05032' },
-		{ name: 'Python', icon: '🐍', color: '#3776AB' },
+		{ name: 'Tailwind CSS', icon: '🎨', color: '#06B6D4' },
 	];
 </script>
 
 <svelte:head>
-	<meta name="description" content="Full-stack web developer with 15+ years of experience in SvelteKit, TypeScript, and modern web technologies. Available for freelance projects and collaborations." />
-	<meta name="keywords" content="web developer, full-stack developer, SvelteKit, TypeScript, freelance, Bartosz Dymet, Krakow" />
+	<meta name="description" content="Full-stack web developer with over 10 years of experience specializing in SvelteKit, TypeScript, and PostgreSQL. Available for freelance projects and collaborations." />
+	<meta name="keywords" content="web developer, full-stack developer, SvelteKit, TypeScript, PostgreSQL, freelance, Bartosz Dymet, Krakow" />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Bartosz Dymet - Full-Stack Web Developer" />
-	<meta property="og:description" content="Full-stack web developer with 15+ years of experience in SvelteKit, TypeScript, and modern web technologies. Available for freelance projects." />
+	<meta property="og:description" content="Full-stack web developer with over 10 years of experience specializing in SvelteKit, TypeScript, and PostgreSQL. Available for freelance projects." />
 	<meta property="og:image" content="/bartek.png" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Bartosz Dymet - Full-Stack Web Developer" />
-	<meta name="twitter:description" content="Full-stack web developer with 15+ years of experience in SvelteKit, TypeScript, and modern web technologies." />
+	<meta name="twitter:description" content="Full-stack web developer with over 10 years of experience specializing in SvelteKit, TypeScript, and PostgreSQL." />
 	<meta name="twitter:image" content="/bartek.png" />
 </svelte:head>
 
@@ -40,9 +40,9 @@
 				<span class="gradient-text">Full-Stack Web Developer</span>
 			</h1>
 			<p class="tagline">
-				Over 15 years of freelance web development experience creating modern web applications
-				with SvelteKit, TypeScript, and cutting-edge technologies. I deliver custom solutions
-				from concept to deployment, with expertise in performance optimization and client collaboration.
+				Over 10 years of experience building high-performance web applications with SvelteKit and TypeScript.
+				Strong background in PostgreSQL database architecture and modern web development.
+				Proven track record of independent project delivery with a pragmatic approach to solving complex problems.
 			</p>
 			<div class="cta">
 				<a href="/projects" class="btn btn-primary">
@@ -70,7 +70,7 @@
 			</div>
 			<div class="floating-card card-2">
 				<div class="stat">
-					<div class="stat-number">50+</div>
+					<div class="stat-number">20+</div>
 					<div class="stat-label">Projects Completed</div>
 				</div>
 			</div>
@@ -504,12 +504,24 @@
 		.cta {
 			justify-content: center;
 		}
+
+		/* Reduce opacity of decorative circles on tablets */
+		.hero::before,
+		.hero::after {
+			opacity: 0.3;
+		}
 	}
 
 	@media (max-width: 768px) {
 		.hero {
 			min-height: auto;
 			padding: var(--space-2xl) 0;
+		}
+
+		/* Hide decorative circles on mobile for better text visibility */
+		.hero::before,
+		.hero::after {
+			display: none;
 		}
 
 		.badge {

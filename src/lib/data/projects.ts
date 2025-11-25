@@ -16,7 +16,7 @@ export const projects: Project[] = [
 	{
 		slug: 'kruk-live',
 		title: 'kruk.live',
-		description: 'Real-time collaboration platform featuring a shared drawing board, Kanban board, live world map, and real estate scraper. Built with Phoenix LiveView and Svelte 5 for instant synchronization.',
+		description: 'Real-time collaboration platform featuring a shared drawing board, Kanban board, live world map, Pixels game, and real estate scraper. Built with Phoenix LiveView and Svelte 5 for instant synchronization.',
 		longDescription: 'kruk.live is a cutting-edge real-time collaboration platform designed to bridge the gap between remote teams. It integrates multiple productivity tools into a single, cohesive interface. The platform leverages the power of Phoenix LiveView for backend-driven real-time updates, ensuring that every stroke on the drawing board or card movement on the Kanban board is instantly reflected across all connected clients. The addition of Svelte 5 on the frontend provides a highly responsive and interactive user experience.',
 		tech: ['Phoenix LiveView', 'Svelte 5', 'LiveSvelte', 'Real-time', 'Elixir', 'Tailwind CSS'],
 		link: 'https://kruk.live',

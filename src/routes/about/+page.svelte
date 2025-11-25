@@ -44,7 +44,7 @@
 	let stats = $state([
 		{ label: 'Web Dev Experience', value: '10+ yrs' },
 		{ label: 'Projects Delivered', value: '20+' },
-		{ label: 'Technologies', value: '20+' },
+		{ label: 'Technologies', value: '10+' },
 		{ label: 'Client Satisfaction', value: '100%' }
 	]);
 </script>
@@ -83,24 +83,18 @@
 					</div>
 					<div class="section-icon">👋</div>
 				</div>
-				<h2>About Bartosz</h2>
+				<h2>Hello</h2>
 				<p>
-					I'm a full-stack web developer with over 10 years of experience, currently specializing in the SvelteKit and TypeScript ecosystem.
-					I have a strong background in building backend architectures using PostgreSQL and a proven track record of independent project delivery.
+					I'm a full-stack web developer with over 10 years of experience. I work mainly with SvelteKit, TypeScript, and PostgreSQL, building modern web applications from start to finish.
 				</p>
 				<p>
-					My expertise spans modern web frameworks with a pragmatic approach to database management and AI/LLM concepts.
-					I architect and develop high-performance web applications using SvelteKit and TypeScript, ensuring strict type safety
-					and code maintainability. I design and implement scalable database schemas and deliver complete custom websites
-					and Content Management Systems.
+					I create custom websites and content management systems, focusing on clean code and good performance. I also have experience integrating AI/LLM features into projects.
 				</p>
 				<p>
-					Beyond web development, I bring additional experience in data analysis and technical operations, including
-					working with specialized software systems and leading international teams. I'm known for my independent work style,
-					strong problem-solving abilities, and quick adaptation to new technologies.
+					Besides web development, I work as a data analyst, where I handle GIS data processing. Before that, I led surveyor teams on international seismic projects.
 				</p>
 				<p>
-					I'm fluent in Polish and English, available to start immediately, and willing to travel for the right opportunity.
+					I speak Polish and English fluently, I'm available to start immediately, and I'm open to travel.
 				</p>
 				<div class="resume-download">
 					<a href="/resume.pdf" download class="btn btn-primary">

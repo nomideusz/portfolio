@@ -27,7 +27,7 @@
 		{
 			title: 'Freelance Full-Stack Web Developer',
 			period: '2007 - Present',
-			description: 'Architect and develop high-performance modern web applications using SvelteKit and TypeScript, ensuring strict type safety and code maintainability. Design and implement scalable database schemas using PostgreSQL. Implement advanced optimization strategies and deliver complete custom websites and Content Management Systems (CMS).'
+			description: 'Architect and develop high-performance web applications with modern technologies. Currently specializing in SvelteKit and TypeScript, ensuring strict type safety and code maintainability. Design and implement scalable database schemas using PostgreSQL. Deliver complete custom websites and Content Management Systems (CMS) with advanced optimization strategies.'
 		},
 		{
 			title: 'Data Analyst / Mobile Measuring Station Operator',
@@ -42,7 +42,7 @@
 	]);
 
 	let stats = $state([
-		{ label: 'Web Dev Experience', value: '10+ yrs' },
+		{ label: 'Web Dev Experience', value: '15+ yrs' },
 		{ label: 'Projects Delivered', value: '20+' },
 		{ label: 'Technologies', value: '10+' },
 		{ label: 'Client Satisfaction', value: '100%' }
@@ -51,18 +51,18 @@
 
 <svelte:head>
 	<title>About - Bartosz Dymet | Full-Stack Web Developer</title>
-	<meta name="description" content="Learn about Bartosz Dymet, a full-stack web developer with over 10 years of experience. Expertise in SvelteKit, TypeScript, PostgreSQL, and modern web technologies." />
+	<meta name="description" content="Learn about Bartosz Dymet, a full-stack web developer with 15+ years of experience. Expertise in modern web technologies including SvelteKit, TypeScript, and PostgreSQL." />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="profile" />
 	<meta property="og:title" content="About Bartosz Dymet - Full-Stack Web Developer" />
-	<meta property="og:description" content="Full-stack developer with over 10 years of experience specializing in SvelteKit, TypeScript, and PostgreSQL database architecture." />
+	<meta property="og:description" content="Full-stack developer with 15+ years of experience, specializing in modern web technologies including SvelteKit, TypeScript, and PostgreSQL database architecture." />
 	<meta property="og:image" content="/bartek.png" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:title" content="About Bartosz Dymet - Full-Stack Web Developer" />
-	<meta name="twitter:description" content="Full-stack developer with over 10 years of experience in modern web technologies." />
+	<meta name="twitter:description" content="Full-stack developer with 15+ years of experience in modern web technologies." />
 	<meta name="twitter:image" content="/bartek.png" />
 </svelte:head>
 
@@ -72,7 +72,7 @@
 			<h1>
 				<span class="gradient-text">About Me</span>
 			</h1>
-			<p class="subtitle">Full-stack developer with over 10 years of experience</p>
+			<p class="subtitle">Full-stack developer with 15+ years of experience</p>
 		</div>
 
 		<div class="content-grid">
@@ -85,7 +85,7 @@
 				</div>
 				<h2>Hello</h2>
 				<p>
-					I'm a full-stack web developer with over 10 years of experience. I work mainly with SvelteKit, TypeScript, and PostgreSQL, building modern web applications from start to finish.
+					I'm a full-stack web developer with 15+ years of experience. I currently specialize in SvelteKit, TypeScript, and PostgreSQL, building modern web applications from start to finish.
 				</p>
 				<p>
 					I create custom websites and content management systems, focusing on clean code and good performance. I also have experience integrating AI/LLM features into projects.

@@ -15,19 +15,19 @@
 </script>
 
 <svelte:head>
-	<meta name="description" content="Full-stack web developer with over 10 years of experience specializing in SvelteKit, TypeScript, and PostgreSQL. Available for freelance projects and collaborations." />
+	<meta name="description" content="Full-stack web developer with 15+ years of experience, specializing in modern web technologies including SvelteKit, TypeScript, and PostgreSQL. Available for freelance projects and collaborations." />
 	<meta name="keywords" content="web developer, full-stack developer, SvelteKit, TypeScript, PostgreSQL, freelance, Bartosz Dymet, Krakow" />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Bartosz Dymet - Full-Stack Web Developer" />
-	<meta property="og:description" content="Full-stack web developer with over 10 years of experience specializing in SvelteKit, TypeScript, and PostgreSQL. Available for freelance projects." />
+	<meta property="og:description" content="Full-stack web developer with 15+ years of experience, specializing in modern web technologies including SvelteKit, TypeScript, and PostgreSQL. Available for freelance projects." />
 	<meta property="og:image" content="/bartek.png" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Bartosz Dymet - Full-Stack Web Developer" />
-	<meta name="twitter:description" content="Full-stack web developer with over 10 years of experience specializing in SvelteKit, TypeScript, and PostgreSQL." />
+	<meta name="twitter:description" content="Full-stack web developer with 15+ years of experience, specializing in modern web technologies including SvelteKit, TypeScript, and PostgreSQL." />
 	<meta name="twitter:image" content="/bartek.png" />
 </svelte:head>
 
@@ -40,7 +40,7 @@
 				<span class="gradient-text">Full-Stack Web Developer</span>
 			</h1>
 			<p class="tagline">
-				Over 10 years of experience building high-performance web applications with SvelteKit and TypeScript.
+				15+ years of experience in web development, currently specializing in building high-performance applications with SvelteKit and TypeScript.
 				Strong background in PostgreSQL database architecture and modern web development.
 				Proven track record of independent project delivery with a pragmatic approach to solving complex problems.
 			</p>

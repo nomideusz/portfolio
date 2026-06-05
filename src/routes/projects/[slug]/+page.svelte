@@ -28,12 +28,30 @@
 				<p class="subtitle">{project.description}</p>
 				
 				<div class="header-actions">
+					{#if project.github}
+						<a href={project.github} target="_blank" rel="noopener noreferrer" class="btn secondary">
+							View Source
+						</a>
+					{/if}
 					{#if project.link}
 						<a href={project.link} target="_blank" rel="noopener noreferrer" class="btn primary">
-							Visit Live Site ↗
+							{project.demos && project.demos.length > 1 ? 'Primary Demo ↗' : 'Visit Live Site ↗'}
 						</a>
 					{/if}
 				</div>
+
+				{#if project.demos && project.demos.length > 0}
+					<div class="demo-links">
+						<span class="demo-label">Live demos</span>
+						<div class="demo-grid">
+							{#each project.demos as demo}
+								<a href={demo.url} target="_blank" rel="noopener noreferrer" class="demo-link">
+									{demo.label} ↗
+								</a>
+							{/each}
+						</div>
+					</div>
+				{/if}
 			</div>
 		</header>
 
@@ -129,6 +147,43 @@
 	.header-actions {
 		display: flex;
 		gap: var(--space-md);
+		flex-wrap: wrap;
+	}
+
+	.demo-links {
+		margin-top: var(--space-lg);
+	}
+
+	.demo-label {
+		display: block;
+		font-size: 0.8rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--color-text-tertiary);
+		margin-bottom: var(--space-sm);
+	}
+
+	.demo-grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-sm);
+	}
+
+	.demo-link {
+		padding: var(--space-xs) var(--space-md);
+		border: var(--border-medium) solid var(--color-border);
+		border-radius: var(--radius-full);
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: var(--color-text-secondary);
+		text-decoration: none;
+		transition: all var(--transition-fast);
+	}
+
+	.demo-link:hover {
+		border-color: var(--color-primary);
+		color: var(--color-primary);
 	}
 
 	.btn {
@@ -149,6 +204,17 @@
 
 	.btn.primary:hover {
 		background: transparent;
+		color: var(--color-primary);
+	}
+
+	.btn.secondary {
+		background: transparent;
+		color: var(--color-text);
+		border: 2px solid var(--color-border);
+	}
+
+	.btn.secondary:hover {
+		border-color: var(--color-primary);
 		color: var(--color-primary);
 	}
 

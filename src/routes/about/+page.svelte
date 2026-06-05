@@ -1,9 +1,8 @@
 <script lang="ts">
 	// Using Svelte 5 runes
-	interface Skill {
-		name: string;
-		icon: string;
-		level: number;
+	interface SkillGroup {
+		category: string;
+		skills: string[];
 	}
 
 	interface Experience {
@@ -12,27 +11,31 @@
 		description: string;
 	}
 
-	let skills = $state<Skill[]>([
-		{ name: 'SvelteKit/Svelte', icon: '⚡', level: 95 },
-		{ name: 'TypeScript', icon: '📘', level: 95 },
-		{ name: 'PostgreSQL', icon: '🗄️', level: 90 },
-		{ name: 'Node.js', icon: '🟢', level: 88 },
-		{ name: 'HTML5/CSS3', icon: '🎨', level: 95 },
-		{ name: 'Docker', icon: '🐳', level: 85 },
-		{ name: 'Linux & VPS', icon: '🐧', level: 88 },
-		{ name: 'Git', icon: '📦', level: 90 }
+	let skillGroups = $state<SkillGroup[]>([
+		{
+			category: 'Frontend',
+			skills: ['Svelte 5', 'SvelteKit', 'TypeScript', 'Tailwind CSS', 'Alpine.js', 'Astro']
+		},
+		{
+			category: 'Backend & Data',
+			skills: ['Node.js', 'Elixir/Phoenix', 'PostgreSQL', 'Turso', 'Drizzle ORM', 'JMAP']
+		},
+		{
+			category: 'Ops & Tooling',
+			skills: ['Docker', 'CapRover', 'Linux/VPS', 'Git', 'GitHub Actions', 'Railway']
+		}
 	]);
 
 	let experiences = $state<Experience[]>([
 		{
 			title: 'Freelance Full-Stack Web Developer',
 			period: '2007 - Present',
-			description: 'Architect and develop high-performance web applications with modern technologies. Currently specializing in SvelteKit and TypeScript, ensuring strict type safety and code maintainability. Design and implement scalable database schemas using PostgreSQL. Deliver complete custom websites and Content Management Systems (CMS) with advanced optimization strategies.'
+			description: 'Build and maintain client websites and my own products. Day-to-day work is mostly SvelteKit and TypeScript — e-commerce stores, booking platforms, B2B sites, and open-source Svelte libraries published to npm. I deploy on CapRover, Vercel, and Netlify depending on the project.'
 		},
 		{
 			title: 'Data Analyst / Mobile Measuring Station Operator',
 			period: '2022 - Present',
-			description: 'Picarro - Operate specialized Picarro vehicle, ensuring high-quality data collection and processing. Utilize GIS software for data processing and analysis to support the Polish Gas Company (PSG). Provide training and operational guidance for clients.'
+			description: 'Picarro — operate mobile measuring vehicles and build internal tools including the Picarro Survey Dashboard (picarro.app) and IGG Document Assistant (igg-assistant.fly.dev) for PSG proposal work. GIS data processing and analysis for utility clients. Training and operational guidance for field teams.'
 		},
 		{
 			title: 'Surveyor & Team Lead',
@@ -43,9 +46,9 @@
 
 	let stats = $state([
 		{ label: 'Web Dev Experience', value: '15+ yrs' },
-		{ label: 'Projects Delivered', value: '20+' },
-		{ label: 'Technologies', value: '10+' },
-		{ label: 'Client Satisfaction', value: '100%' }
+		{ label: 'Public GitHub Repos', value: '30+' },
+		{ label: 'On GitHub Since', value: '2014' },
+		{ label: 'Based In', value: 'Kraków' }
 	]);
 </script>
 
@@ -72,7 +75,7 @@
 			<h1>
 				<span class="gradient-text">About Me</span>
 			</h1>
-			<p class="subtitle">Full-stack developer with 15+ years of experience</p>
+			<p class="subtitle">Full-stack developer in Kraków — client work, personal projects, and open source</p>
 		</div>
 
 		<div class="content-grid">
@@ -85,13 +88,13 @@
 				</div>
 				<h2>Hello</h2>
 				<p>
-					I'm a full-stack web developer with 15+ years of experience. I currently specialize in SvelteKit, TypeScript, and PostgreSQL, building modern web applications from start to finish.
+					I'm a full-stack web developer with 15+ years of experience, based in Kraków. Most of my recent work is in SvelteKit and TypeScript — you can see the code on <a href="https://github.com/nomideusz" target="_blank" rel="noopener noreferrer">GitHub</a>, where I've been active since 2014 with 30+ public repositories.
 				</p>
 				<p>
-					I create custom websites and content management systems, focusing on clean code and good performance. I also have experience integrating AI/LLM features into projects.
+					Most of my product work lives in the <a href="https://github.com/nomideusz/asini" target="_blank" rel="noopener noreferrer">Asini monorepo</a> — a pnpm workspace with 8 published <code>@nomideusz</code> Svelte 5 packages and five live apps (thebest.travel, szkolyjogi.pl, kompi.pl, fixtar.pl, recycling.kompi.pl). I also run <a href="https://webmail.zaur.app" target="_blank" rel="noopener noreferrer">Zaur</a>, a complete self-hosted email platform (Stalwart server, JMAP webmail, calendar, contacts, Logto passkeys, and Dinosaurus with Navidrome radio), plus kruk.live and client sites.
 				</p>
 				<p>
-					Besides web development, I work as a data analyst, where I handle GIS data processing. Before that, I led surveyor teams on international seismic projects.
+					Outside freelance work, I'm affiliated with <strong>Kompi</strong> (mikrokomputery e-commerce) and work as a data analyst operating Picarro mobile measuring stations for PSG. Earlier in my career I led surveyor teams on international seismic projects.
 				</p>
 				<p>
 					I speak Polish and English fluently, I'm available to start immediately, and I'm open to travel.
@@ -119,16 +122,14 @@
 				<span class="gradient-text">Skills & Expertise</span>
 			</h2>
 			<div class="skills-grid">
-				{#each skills as skill}
+				{#each skillGroups as group}
 					<div class="skill-card card">
-						<div class="skill-header">
-							<span class="skill-icon">{skill.icon}</span>
-							<span class="skill-name">{skill.name}</span>
+						<h3 class="skill-category">{group.category}</h3>
+						<div class="skill-tags">
+							{#each group.skills as skill}
+								<span class="skill-tag">{skill}</span>
+							{/each}
 						</div>
-						<div class="skill-bar">
-							<div class="skill-progress" style="width: {skill.level}%"></div>
-						</div>
-						<div class="skill-level">{skill.level}%</div>
 					</div>
 				{/each}
 			</div>
@@ -246,6 +247,10 @@
 	.resume-download .btn {
 		font-size: 1.125rem;
 		padding: var(--space-md) var(--space-xl);
+		color: var(--color-white);
+		text-decoration: none;
+		position: relative;
+		z-index: 1;
 	}
 
 	.stats-grid {
@@ -322,65 +327,30 @@
 		padding: var(--space-lg);
 	}
 
-	.skill-header {
-		display: flex;
-		align-items: center;
-		gap: var(--space-sm);
+	.skill-category {
+		font-size: 1.25rem;
 		margin-bottom: var(--space-md);
-	}
-
-	.skill-icon {
-		font-size: 1.75rem;
-	}
-
-	.skill-name {
-		font-weight: 600;
-		font-size: 1.125rem;
 		color: var(--color-text);
 	}
 
-	.skill-bar {
-		height: 16px;
+	.skill-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-sm);
+	}
+
+	.skill-tag {
+		padding: var(--space-xs) var(--space-md);
 		background: var(--color-bg-secondary);
+		border: var(--border-medium) solid var(--color-border);
 		border-radius: var(--radius-full);
-		overflow: hidden;
-		margin-bottom: var(--space-sm);
-		border: var(--border-medium) solid var(--color-border-secondary);
-		box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: var(--color-text-secondary);
 	}
 
-	.skill-progress {
-		height: 100%;
-		background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-		border-radius: var(--radius-full);
-		transition: width var(--transition-slow);
-		position: relative;
-		box-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
-	}
-
-	.skill-card:nth-child(even) .skill-progress {
-		background: linear-gradient(90deg, var(--color-tertiary), var(--color-quaternary));
-		box-shadow: 0 0 10px rgba(131, 56, 236, 0.5);
-	}
-
-	.skill-progress::after {
-		content: '';
-		position: absolute;
-		right: -5px;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 10px;
-		height: 10px;
-		background: var(--color-accent);
-		border-radius: 50%;
-		border: 2px solid var(--color-surface);
-		box-shadow: 0 0 8px var(--color-accent);
-	}
-
-	.skill-level {
-		text-align: right;
-		font-size: 0.875rem;
-		color: var(--color-text-tertiary);
+	.bio-section p a {
+		color: var(--color-primary);
 		font-weight: 600;
 	}
 

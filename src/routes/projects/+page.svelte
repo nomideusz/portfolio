@@ -2,7 +2,7 @@
 	import { projects } from '$lib/data/projects';
 
 	let selectedFilter = $state<string>('All');
-	const categories = ['All', 'Full-Stack', 'Web Development'];
+	const categories = ['All', 'Full-Stack', 'Client Sites', 'Open Source'];
 
 	$effect(() => {
 		// Filter projects when selectedFilter changes
@@ -21,7 +21,7 @@
 
 <svelte:head>
 	<title>Projects - Bartosz Dymet | Web Development Portfolio</title>
-	<meta name="description" content="Explore my portfolio of web development projects including SvelteKit applications, PWAs, and modern websites. Featured work: Zaur booking platform, Intertech Poland B2B site, and more." />
+	<meta name="description" content="Portfolio of the Asini monorepo — tour booking, e-commerce, yoga directory, 8 npm packages — plus client sites and personal projects. All with public GitHub repos." />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
@@ -42,7 +42,7 @@
 			<h1>
 				<span class="gradient-text">Featured Work</span>
 			</h1>
-			<p class="subtitle">A collection of projects I've built with passion and precision</p>
+			<p class="subtitle">Client work, personal products, and open source — all with public code on GitHub</p>
 		</div>
 
 		<div class="filters">
@@ -83,6 +83,17 @@
 							<span>View Details</span>
 							<span class="arrow">→</span>
 						</a>
+						{#if project.github}
+							<a
+								href={project.github}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="project-link github-link"
+							>
+								<span>Source</span>
+								<span class="icon">↗</span>
+							</a>
+						{/if}
 						{#if project.link}
 							<a
 								href={project.link}
@@ -90,7 +101,7 @@
 								rel="noopener noreferrer"
 								class="project-link external-link"
 							>
-								<span>Visit Site</span>
+								<span>Live</span>
 								<span class="icon">↗</span>
 							</a>
 						{/if}

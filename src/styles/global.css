@@ -281,13 +281,15 @@ textarea:focus-visible {
 	letter-spacing: 0.05em;
 }
 
-.btn-primary {
+.btn-primary,
+a.btn-primary {
 	background: var(--color-primary);
 	color: var(--color-white);
 	border: var(--border-medium) solid var(--color-tertiary);
 	box-shadow: var(--shadow-md);
 	position: relative;
 	overflow: hidden;
+	text-decoration: none;
 }
 
 .btn-primary::before {
@@ -303,7 +305,10 @@ textarea:focus-visible {
 	transform: translateX(-100%);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+a.btn-primary:hover,
+.btn-primary.zaur-pressed,
+a.btn-primary.zaur-pressed {
 	background: var(--color-orange);
 	color: var(--color-white);
 	border-color: var(--color-accent);
@@ -311,7 +316,10 @@ textarea:focus-visible {
 	box-shadow: var(--shadow-xl);
 }
 
-.btn-primary:hover::before {
+.btn-primary:hover::before,
+a.btn-primary:hover::before,
+.btn-primary.zaur-pressed::before,
+a.btn-primary.zaur-pressed::before {
 	transform: translateX(0);
 }
 

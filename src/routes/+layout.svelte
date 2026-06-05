@@ -1,5 +1,7 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
+	import ZaurSprite from '$lib/components/ZaurSprite.svelte';
+	import ZaurWalker from '$lib/components/ZaurWalker.svelte';
 	import '../styles/global.css';
 	import { afterNavigate } from '$app/navigation';
 	import { onMount } from 'svelte';
@@ -8,6 +10,18 @@
 	let scrolled = $state(false);
 	let mobileMenuOpen =	$state(false);
 	let theme = $state('light');
+	let contactPressedByZaur = $state(false);
+	let contactBtn = $state<HTMLAnchorElement | null>(null);
+	let contactPressTimer: ReturnType<typeof setTimeout> | undefined;
+
+	function handleZaurPressContact() {
+		if (contactPressTimer) clearTimeout(contactPressTimer);
+		contactPressedByZaur = true;
+		contactPressTimer = setTimeout(() => {
+			contactPressedByZaur = false;
+			contactPressTimer = undefined;
+		}, 2800);
+	}
 
 	onMount(() => {
 		// Check for saved theme preference or system preference
@@ -108,7 +122,7 @@
 	<header class:scrolled>
 		<nav class="container">
 			<a href="/" class="logo" onclick={closeMobileMenu}>
-				<span class="gradient-text">Portfolio</span>
+				<span class="gradient-text">Bartosz Dymet</span>
 			</a>
 
 			<button class="mobile-menu-toggle" onclick={toggleMobileMenu} aria-label="Toggle mobile menu">
@@ -119,7 +133,17 @@
 				<li><a href="/" onclick={closeMobileMenu}>Home</a></li>
 				<li><a href="/about" onclick={closeMobileMenu}>About</a></li>
 				<li><a href="/projects" onclick={closeMobileMenu}>Projects</a></li>
-				<li><a href="/contact" class="btn btn-primary" onclick={closeMobileMenu}>Contact</a></li>
+				<li>
+					<a
+						href="/contact"
+						class="btn btn-primary"
+						class:zaur-pressed={contactPressedByZaur}
+						bind:this={contactBtn}
+						onclick={closeMobileMenu}
+					>
+						Contact
+					</a>
+				</li>
 				<li class="theme-toggle-li">
 					<button class="theme-toggle" onclick={toggleTheme} aria-label="Toggle theme">
 						{#if theme === 'light'}
@@ -131,6 +155,9 @@
 				</li>
 			</ul>
 		</nav>
+		<div class="header-zaur-track">
+			<ZaurWalker contactButton={contactBtn} onPressContact={handleZaurPressContact} />
+		</div>
 	</header>
 
 	<main>
@@ -140,8 +167,13 @@
 	<footer>
 		<div class="container footer-content">
 			<div class="footer-section">
-				<h3 class="gradient-text">Let's Build Something Amazing</h3>
-				<p>Open to exciting opportunities and collaborations.</p>
+				<div class="footer-zaur">
+					<ZaurSprite scale={3} />
+					<div>
+						<h3 class="gradient-text">Let's Build Something Amazing</h3>
+						<p>Open to opportunities and collaborations. Also building the <a href="https://github.com/nomideusz/zaur" target="_blank" rel="noopener noreferrer">Zaur</a> platform — email, radio, and a pixel dinosaur who sorts the news.</p>
+					</div>
+				</div>
 			</div>
 			<div class="footer-links">
 				<div class="link-group">
@@ -150,6 +182,12 @@
 					<a href="/about">About</a>
 					<a href="/projects">Projects</a>
 					<a href="/contact">Contact</a>
+				</div>
+				<div class="link-group">
+					<h4>Zaur</h4>
+					<a href="https://dino.zaur.app" target="_blank" rel="noopener noreferrer">dino.zaur.app</a>
+					<a href="https://webmail.zaur.app" target="_blank" rel="noopener noreferrer">webmail.zaur.app</a>
+					<a href="https://music.zaur.app" target="_blank" rel="noopener noreferrer">music.zaur.app</a>
 				</div>
 				<div class="link-group">
 					<h4>Connect</h4>
@@ -162,7 +200,10 @@
 		</div>
 		<div class="footer-bottom">
 			<div class="container">
-				<p>&copy; {new Date().getFullYear()} - Built with SvelteKit & Svelte 5</p>
+				<p>
+					&copy; {new Date().getFullYear()} Bartosz Dymet — Built with SvelteKit & Svelte 5, and a little
+					<a href="https://dino.zaur.app" target="_blank" rel="noopener noreferrer">zaur</a>
+				</p>
 			</div>
 		</div>
 	</footer>
@@ -197,6 +238,18 @@
 		padding: 1rem 0;
 		transition: all var(--transition-base);
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		overflow: visible;
+	}
+
+	.header-zaur-track {
+		position: absolute;
+		bottom: -7px;
+		left: 0;
+		right: 0;
+		height: 7px;
+		pointer-events: none;
+		z-index: 0;
+		overflow: visible;
 	}
 
 	header::before {
@@ -223,12 +276,24 @@
 	}
 
 	nav {
+		position: relative;
+		z-index: 1;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	}
 
+	/* Solid nav controls sit above zaur's patrol line — he ducks underneath */
+	.nav-links :global(a.btn),
+	.theme-toggle {
+		position: relative;
+		z-index: 2;
+	}
+
 	.logo {
+		display: flex;
+		align-items: center;
+		gap: var(--space-sm);
 		font-size: 1.5rem;
 		font-weight: 700;
 		text-decoration: none;
@@ -419,9 +484,37 @@
 		margin-bottom: var(--space-sm);
 	}
 
+	.footer-zaur {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-md);
+	}
+
 	.footer-section p {
 		color: var(--color-text-secondary);
 		max-width: 400px;
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	.footer-section a {
+		color: var(--color-primary);
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.footer-section a:hover {
+		text-decoration: underline;
+	}
+
+	.footer-bottom a {
+		color: var(--color-primary);
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.footer-bottom a:hover {
+		text-decoration: underline;
 	}
 
 	.footer-links {
@@ -537,6 +630,7 @@
 		}
 
 		.footer-links {
+			flex-wrap: wrap;
 			gap: var(--space-xl);
 		}
 	}

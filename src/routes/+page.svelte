@@ -5,17 +5,17 @@
 	const technologies = [
 		{ name: 'SvelteKit', icon: '⚡', color: '#FF3E00' },
 		{ name: 'TypeScript', icon: '📘', color: '#3178C6' },
+		{ name: 'Elixir', icon: '💧', color: '#4B275F' },
 		{ name: 'PostgreSQL', icon: '🗄️', color: '#4169E1' },
-		{ name: 'Node.js', icon: '🟢', color: '#339933' },
+		{ name: 'Turso', icon: '🔷', color: '#4FF8D2' },
 		{ name: 'Docker', icon: '🐳', color: '#2496ED' },
-		{ name: 'Linux/VPS', icon: '🐧', color: '#FCC624' },
 		{ name: 'Git', icon: '📦', color: '#F05032' },
 		{ name: 'Tailwind CSS', icon: '🎨', color: '#06B6D4' },
 	];
 </script>
 
 <svelte:head>
-	<meta name="description" content="Full-stack web developer with 15+ years of experience, specializing in modern web technologies including SvelteKit, TypeScript, and PostgreSQL. Available for freelance projects and collaborations." />
+	<meta name="description" content="Bartosz Dymet — full-stack web developer in Kraków. SvelteKit, TypeScript, Elixir. Client sites, open-source npm packages, and personal products. Code on GitHub since 2014." />
 	<meta name="keywords" content="web developer, full-stack developer, SvelteKit, TypeScript, PostgreSQL, freelance, Bartosz Dymet, Krakow" />
 
 	<!-- Open Graph / Facebook -->
@@ -40,9 +40,9 @@
 				<span class="gradient-text">Full-Stack Web Developer</span>
 			</h1>
 			<p class="tagline">
-				15+ years of experience in web development, currently specializing in building high-performance applications with SvelteKit and TypeScript.
-				Strong background in PostgreSQL database architecture and modern web development.
-				Proven track record of independent project delivery with a pragmatic approach to solving complex problems.
+				15+ years building websites and web apps from Kraków. I run the Asini monorepo — Svelte 5 packages,
+				a tour booking platform, e-commerce stores, and a yoga directory — and Zaur, a self-hosted email
+				platform with webmail, calendar, contacts, and Navidrome radio. Code is public on GitHub.
 			</p>
 			<div class="cta">
 				<a href="/projects" class="btn btn-primary">
@@ -70,14 +70,14 @@
 			</div>
 			<div class="floating-card card-2">
 				<div class="stat">
-					<div class="stat-number">20+</div>
-					<div class="stat-label">Projects Completed</div>
+					<div class="stat-number">30+</div>
+					<div class="stat-label">Public Repos</div>
 				</div>
 			</div>
 			<div class="floating-card card-3">
 				<div class="stat">
-					<div class="stat-number">100%</div>
-					<div class="stat-label">Client Satisfaction</div>
+					<div class="stat-number">2014</div>
+					<div class="stat-label">On GitHub Since</div>
 				</div>
 			</div>
 		</div>
@@ -89,7 +89,7 @@
 		<h2 class="section-title">
 			<span class="gradient-text">Technologies & Tools</span>
 		</h2>
-		<p class="section-subtitle">Building with modern, battle-tested technologies</p>
+		<p class="section-subtitle">Technologies I use most — reflected in my GitHub repos</p>
 		<div class="tech-grid">
 			{#each technologies as tech}
 				<div class="tech-card card">

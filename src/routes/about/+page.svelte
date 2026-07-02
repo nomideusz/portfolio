@@ -35,7 +35,7 @@
 		{
 			title: 'Data Analyst / Mobile Measuring Station Operator',
 			period: '2022 - Present',
-			description: 'Picarro — operate mobile measuring vehicles and build internal tools including the Picarro Survey Dashboard (picarro.app) and IGG Document Assistant (igg-assistant.fly.dev) for PSG proposal work. GIS data processing and analysis for utility clients. Training and operational guidance for field teams.'
+			description: 'Picarro — operate mobile measuring vehicles and build internal tools including the Picarro Survey Dashboard and IGG Document Assistant (igg-assistant.fly.dev) for PSG proposal work. GIS data processing and analysis for utility clients. Training and operational guidance for field teams.'
 		},
 		{
 			title: 'Surveyor & Team Lead',
@@ -46,7 +46,7 @@
 
 	let stats = $state([
 		{ label: 'Web Dev Experience', value: '15+ yrs' },
-		{ label: 'Public GitHub Repos', value: '30+' },
+		{ label: 'npm Packages Published', value: '5' },
 		{ label: 'On GitHub Since', value: '2014' },
 		{ label: 'Based In', value: 'Kraków' }
 	]);
@@ -88,10 +88,10 @@
 				</div>
 				<h2>Hello</h2>
 				<p>
-					I'm a full-stack web developer with 15+ years of experience, based in Kraków. Most of my recent work is in SvelteKit and TypeScript — you can see the code on <a href="https://github.com/nomideusz" target="_blank" rel="noopener noreferrer">GitHub</a>, where I've been active since 2014 with 30+ public repositories.
+					I'm a full-stack web developer with 15+ years of experience, based in Kraków. Most of my recent work is in SvelteKit and TypeScript — you can see the code on <a href="https://github.com/nomideusz" target="_blank" rel="noopener noreferrer">GitHub</a>, where I've been active since 2014 with 25+ public repositories.
 				</p>
 				<p>
-					Most of my product work lives in the <a href="https://github.com/nomideusz/asini" target="_blank" rel="noopener noreferrer">Asini monorepo</a> — a pnpm workspace with 8 published <code>@nomideusz</code> Svelte 5 packages and five live apps (thebest.travel, szkolyjogi.pl, kompi.pl, fixtar.pl, recycling.kompi.pl). I also run <a href="https://webmail.zaur.app" target="_blank" rel="noopener noreferrer">Zaur</a>, a complete self-hosted email platform (Stalwart server, JMAP webmail, calendar, contacts, Logto passkeys, and Dinosaurus with Navidrome radio), plus kruk.live and client sites.
+					Most of my product work lives in Asini — a pnpm monorepo with 8 <code>@nomideusz</code> Svelte 5 packages (<a href="https://www.npmjs.com/search?q=%40nomideusz" target="_blank" rel="noopener noreferrer">five published to npm</a>, each with a live demo) and live apps: thebest.travel, szkolyjogi.pl, kompi.pl, and fixtar.pl. I also run <a href="https://webmail.zaur.app" target="_blank" rel="noopener noreferrer">Zaur</a>, a complete self-hosted email platform (Stalwart server, JMAP webmail, calendar, contacts, Logto passkeys, and Dinosaurus with Navidrome radio), plus kruk.live and client sites.
 				</p>
 				<p>
 					Outside freelance work, I'm affiliated with <strong>Kompi</strong> (mikrokomputery e-commerce) and work as a data analyst operating Picarro mobile measuring stations for PSG. Earlier in my career I led surveyor teams on international seismic projects.

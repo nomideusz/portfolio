@@ -18,11 +18,10 @@ export const projects: Project[] = [
 		slug: 'asini',
 		title: 'Asini',
 		description:
-			'pnpm monorepo powering multiple live Polish web products — 8 publishable @nomideusz Svelte 5 packages, 5 production apps, and Python data pipelines.',
+			'pnpm monorepo powering multiple live Polish web products — 8 @nomideusz Svelte 5 packages (5 on npm), 5 production apps, and Python data pipelines.',
 		longDescription:
-			'Asini is my main product workspace. I develop everything here in a pnpm monorepo, then sync individual apps to standalone GitHub repos for deployment (Netlify, Vercel, Railway). Shared libraries cover calendar UI, booking logic, Polish-aware search, i18n, QR codes, media uploads, Stripe Connect, and email templates. Production apps include a tour booking platform, a yoga school directory, two e-commerce stores, and a civic recycling map.',
+			'Asini is my main product workspace. I develop everything here in a private pnpm monorepo, then sync individual packages and apps to standalone public GitHub repos for npm publishing and deployment (Netlify, Vercel, Railway). Shared libraries cover calendar UI, booking logic, Polish-aware search, i18n, QR codes, media uploads, Stripe Connect, and email templates. Production apps include a tour booking platform, a yoga school directory, two e-commerce stores, and a civic recycling map.',
 		tech: ['pnpm', 'SvelteKit', 'Svelte 5', 'TypeScript', 'Turso', 'PostgreSQL', 'Drizzle', 'Python'],
-		github: 'https://github.com/nomideusz/asini',
 		category: 'Full-Stack',
 		featured: true,
 		features: [
@@ -55,7 +54,6 @@ export const projects: Project[] = [
 			'Google Maps'
 		],
 		link: 'https://thebest.travel',
-		github: 'https://github.com/nomideusz/asini',
 		category: 'Full-Stack',
 		featured: true,
 		features: [
@@ -75,17 +73,18 @@ export const projects: Project[] = [
 		slug: 'asini-packages',
 		title: '@nomideusz Packages',
 		description:
-			'Suite of 8 Svelte 5 libraries — calendar, scheduler, search, i18n, QR, media, payments, and email templates. Published to npm.',
+			'Svelte 5 library suite — 5 packages on npm (calendar, search, i18n, QR, geometrize), each with a public repo and live demo. 3 more power production apps.',
 		longDescription:
-			'These packages are developed inside the Asini monorepo and published under @nomideusz. They started as extracted logic from tour booking and now power multiple production apps. Four packages ship with live interactive demos — calendar, search, i18n, and QR — so you can try the APIs in the browser before installing from npm.',
+			'These packages are developed inside the Asini monorepo and published under @nomideusz. They started as extracted logic from tour booking and now power multiple production apps. Five are on npm — calendar, search, i18n, QR, and geometrize — each with a public GitHub repo and a live interactive demo, so you can try the APIs in the browser before installing. Scheduler, media, payments, and notify remain in the monorepo, exercised daily by the production apps.',
 		tech: ['Svelte 5', 'TypeScript', 'Vitest', 'npm', 'FTS5', 'pg_trgm'],
 		link: 'https://svelte-calendar.xyz',
-		github: 'https://github.com/nomideusz/asini',
+		github: 'https://github.com/nomideusz',
 		demos: [
 			{ label: 'svelte-calendar', url: 'https://svelte-calendar.xyz' },
 			{ label: 'svelte-search', url: 'https://svelte-search-eight.vercel.app' },
 			{ label: 'svelte-i18n', url: 'https://svelte-i18n-five.vercel.app' },
-			{ label: 'svelte-qr', url: 'https://svelte-qr.vercel.app' }
+			{ label: 'svelte-qr', url: 'https://svelte-qr.vercel.app' },
+			{ label: 'svelte-geometrize', url: 'https://svelte-geometrize.vercel.app' }
 		],
 		category: 'Open Source',
 		featured: true,
@@ -94,6 +93,7 @@ export const projects: Project[] = [
 			'svelte-search — FTS5/trigram search, geo proximity, Polish query resolver (live playground)',
 			'svelte-i18n — runes-native i18n with LocaleSwitcher and flat JSON keys (live preview)',
 			'svelte-qr — zero-dep TypeScript encoder with SVG output and playground',
+			'svelte-geometrize — triangle placeholders that resolve into the real photo as it loads',
 			'svelte-scheduler, svelte-media, svelte-payments, svelte-notify — used in production apps'
 		],
 		challenges: [
@@ -111,7 +111,7 @@ export const projects: Project[] = [
 			'szkolyjogi.pl is a live directory of yoga schools in Poland, built in apps/yoga inside the Asini monorepo. Listings are ingested by a Python scraper (tools/yoga-scraper) into Turso, then served through city and category pages with @nomideusz/svelte-search and svelte-calendar. The app doubles as an integration sandbox for new package versions.',
 		tech: ['SvelteKit', 'Svelte 5', 'Turso', 'Drizzle ORM', 'Google Maps', 'Python'],
 		link: 'https://szkolyjogi.pl',
-		github: 'https://github.com/nomideusz/asini',
+		github: 'https://github.com/nomideusz/yoga',
 		category: 'Full-Stack',
 		features: [
 			'700+ yoga schools with city and category browse pages',
@@ -134,7 +134,6 @@ export const projects: Project[] = [
 			'FixTar (fixtar.pl) is an online store for elektronarzędzia, developed in apps/fixtar inside Asini. Products sync read-only from BaseLinker into Turso; search runs through @nomideusz/svelte-search with Polish FTS5 and trigram matching. Synced to nomideusz/fixtar for Vercel deployment.',
 		tech: ['SvelteKit', 'Svelte 5', 'Turso', 'Drizzle ORM', 'Better Auth', 'BaseLinker'],
 		link: 'https://fixtar.pl',
-		github: 'https://github.com/nomideusz/asini',
 		category: 'Full-Stack',
 		features: [
 			'BaseLinker read-only inventory sync into Turso edge DB',
@@ -157,7 +156,6 @@ export const projects: Project[] = [
 			'Kompi.pl is the e-commerce storefront I build for Kompi, the company on my GitHub profile. It lives in apps/kompi inside Asini and shares the same Turso + search stack as FixTar, with Przelewy24 and bank transfer payments via a pluggable payment service layer. Synced to nomideusz/kompi for Netlify.',
 		tech: ['SvelteKit', 'Svelte 5', 'Turso', 'Drizzle ORM', 'Better Auth', 'Przelewy24'],
 		link: 'https://kompi.pl',
-		github: 'https://github.com/nomideusz/asini',
 		category: 'Full-Stack',
 		features: [
 			'Full storefront — products, cart, checkout, account, admin',
@@ -180,7 +178,7 @@ export const projects: Project[] = [
 			'recycling.kompi.pl shows collection points for electronic waste across Poland. Data comes from tools/kompi-scraper — Google Places, OpenStreetMap, and retail chain sources — into Turso. The SvelteKit app renders a clustered Google Maps interface with dynamic sitemaps and OG metadata.',
 		tech: ['SvelteKit', 'Svelte 5', 'Turso', 'Google Maps', 'Python'],
 		link: 'https://recycling.kompi.pl',
-		github: 'https://github.com/nomideusz/asini',
+		github: 'https://github.com/nomideusz/kompi-recycling',
 		category: 'Full-Stack',
 		features: [
 			'Map of recycling collection points with marker clustering',
@@ -253,8 +251,6 @@ export const projects: Project[] = [
 			'Puppeteer',
 			'svelteplot'
 		],
-		link: 'https://picarro.app',
-		github: 'https://github.com/nomideusz/picarro-dashboard',
 		category: 'Full-Stack',
 		features: [
 			'Multi-project tenancy — GNI, WWU, PSG with per-client ArcGIS feature servers',
@@ -402,7 +398,6 @@ export const projects: Project[] = [
 			'Wibroakustyka.ai presents the Graal vibroacoustic chair — a wellness product combining sound and vibration therapy. The site covers product features, event coverage, and user testimonials. Source is in the wibro repository on GitHub.',
 		tech: ['Astro', 'JavaScript', 'Tailwind CSS', 'Partytown'],
 		link: 'https://wibroakustyka.ai',
-		github: 'https://github.com/nomideusz/wibro',
 		category: 'Client Sites',
 		features: [
 			'Product showcase with photo and video content',
@@ -425,7 +420,6 @@ export const projects: Project[] = [
 			'Intertech Poland distributes Picarro and UGT measurement equipment. The site serves as a product catalog and industry blog for a specialized B2B audience. Rebuilt as version 2 in the inter repository.',
 		tech: ['SvelteKit', 'JavaScript', 'Netlify', 'Markdown', 'Tailwind CSS'],
 		link: 'https://intertechpoland.pl',
-		github: 'https://github.com/nomideusz/inter',
 		category: 'Client Sites',
 		features: [
 			'Product pages for CRDS spectroscopy and environmental monitoring gear',

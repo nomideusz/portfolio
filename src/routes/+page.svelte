@@ -42,7 +42,8 @@
 			<p class="tagline">
 				15+ years building websites and web apps from Kraków. I run the Asini monorepo — Svelte 5 packages,
 				a tour booking platform, e-commerce stores, and a yoga directory — and Zaur, a self-hosted email
-				platform with webmail, calendar, contacts, and Navidrome radio. Code is public on GitHub.
+				platform with webmail, calendar, contacts, and Navidrome radio. Five @nomideusz Svelte packages
+				are on npm, each with a live demo you can try in the browser.
 			</p>
 			<div class="cta">
 				<a href="/projects" class="btn btn-primary">
@@ -70,7 +71,7 @@
 			</div>
 			<div class="floating-card card-2">
 				<div class="stat">
-					<div class="stat-number">30+</div>
+					<div class="stat-number">25+</div>
 					<div class="stat-label">Public Repos</div>
 				</div>
 			</div>
